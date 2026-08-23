@@ -1,7 +1,7 @@
-# [Nombre del equipo]
+# Bananza
 
-Integrantes: [nombre 1], [nombre 2], [nombre 3], [nombre 4], [nombre 5]
+Integrantes: Carlos Antonio Solis Rocha, Franco Kowalski, Iara Sol Rodriguez, Leonardo Barbaro, Maximiliano Caseres
 
-Producto: [una línea describiendo el producto — se completa en el TP1]
+Producto: App social de Ingeniería Informática para comunicación y colaboración entre estudiantes.
 
-Segmento de la comunidad UNLaM: [se completa en el TP1]
+Segmento de la comunidad UNLaM: Estudiantes activos de la carrera de Ingeniería Informática en UNLaM. 
