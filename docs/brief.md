@@ -1,64 +1,114 @@
 # Brief de Producto
 
-## Versión 1 — TP1
+## Versión 2 — TP2
 
-Esta es la primera versión del brief, por lo que no existen cambios respecto de una versión anterior. Se crea para consolidar las decisiones iniciales del TP1 sobre el segmento, el problema, el producto, sus funcionalidades, integraciones, usuarios y supuestos. Estas definiciones se actualizarán a partir de la evidencia obtenida en los próximos trabajos prácticos.
+Respecto de la versión 1, se reemplazó el perfil hipotético por un perfil construido a partir de las entrevistas a U1, U2 y U3. Se mantuvo como usuario primario al estudiante que busca información porque dos de los tres entrevistados manifestaron dificultades concretas y el tercero también valoró una mejor organización. El foco del producto pasó de solamente centralizar contenidos a organizarlos por materia, comisión y cuatrimestre, permitir contextualizar cada aporte e informar novedades mediante notificaciones. También se descartó la búsqueda de compañeros como necesidad principal, se reformuló el motivo de la verificación de usuarios y se actualizó cada supuesto según la evidencia obtenida.
 
 ## Segmento elegido
 
-El segmento elegido es el de **estudiantes regulares y activos de Ingeniería en Informática de la UNLaM**.
+El segmento está compuesto por **estudiantes regulares y activos de Ingeniería en Informática de la UNLaM**.
 
-Se eligió este segmento porque el equipo forma parte de él, conoce de primera mano sus dinámicas y detectó necesidades propias y de compañeros que actualmente no están cubiertas. Esta cercanía también facilita el acceso a usuarios reales para realizar el relevamiento y las pruebas posteriores.
+Se mantiene este segmento porque el relevamiento confirmó problemas concretos relacionados con la búsqueda y organización de información académica. Además, la pertenencia del equipo a la comunidad facilita el acceso a usuarios reales para validar el producto durante los siguientes trabajos prácticos.
 
-No existe una cifra oficial disponible sobre el tamaño del segmento. Como estimación inicial, se considera una población de entre 1.500 y 2.500 estudiantes activos en distintas etapas de la carrera. Se distinguen por su afinidad con la tecnología y por utilizar plataformas como Discord y WhatsApp para comunicarse, compartir materiales y buscar recomendaciones sobre materias y comisiones.
+No existe una cifra oficial disponible sobre el tamaño del segmento. Como estimación inicial, se considera una población de entre 1.500 y 2.500 estudiantes activos en distintas etapas de la carrera.
 
 ## Producto
 
 **Nombre:** UNLaMigos.
 
-UNLaMigos es una aplicación social para estudiantes de Ingeniería en Informática de la UNLaM. Busca resolver la **dispersión de la información y de los puntos de contacto entre estudiantes**.
+UNLaMigos es un espacio de acceso verificado para estudiantes de Ingeniería en Informática de la UNLaM. Busca resolver la dificultad para encontrar materiales, referencias y contactos de cursada cuando la información está dispersa o acumulada sin orden en WhatsApp, Discord y MIeL.
 
-Actualmente, los materiales, enlaces, opiniones y conversaciones se reparten entre grupos y canales de plataformas como Discord y WhatsApp. Esto dificulta encontrar información sobre una materia o comisión, reduce la confiabilidad de algunas reseñas y no permite comprobar fácilmente que quienes participan sean estudiantes regulares. El producto centraliza y organiza esos recursos e interacciones para los estudiantes activos de la carrera.
+La propuesta no consiste únicamente en reunir la información existente. Debe permitir recuperarla con mayor facilidad que los canales actuales, atribuirla a una materia, comisión y cuatrimestre concretos, y reducir la dependencia de conocer a la persona correcta o pertenecer previamente al grupo adecuado.
+
+## Perfil del usuario real
+
+El usuario relevado es un estudiante activo de Ingeniería en Informática que cursa varias materias simultáneamente y tiene una ocupación fuera de la Universidad. Su tiempo de estudio se organiza en ventanas acotadas entre el trabajo y la cursada.
+
+Los tres entrevistados cursan etapas intermedias o avanzadas de la carrera y buscan materiales principalmente desde una computadora en su casa. Utilizan WhatsApp, MIeL y Discord según la necesidad, sin un recorrido único. Suelen consumir apuntes y modelos de parciales. Los estudiantes menos avanzados comparten poco o solamente con personas conocidas, mientras que el usuario avanzado genera y comparte recursos con mayor frecuencia.
+
+Los tres perciben desorganización, aunque no todos sufren la misma dificultad para encontrar material. La diferencia observada no depende únicamente del año de cursada, sino también del acceso a contactos y del conocimiento de los canales donde buscar. Este perfil reemplaza al usuario hipotético definido en la versión 1.
+
+## Usuario primario
+
+El usuario primario continúa siendo el grupo de **estudiantes que buscan información**. Dos de los tres entrevistados manifestaron dificultades frecuentes para encontrarla; el tercero logra resolver la búsqueda porque conoce los canales disponibles, pero igualmente considera valiosa una organización mejor.
+
+Los tres usuarios relevados pertenecen a este grupo. Dos también comparten recursos, conducta que aparece con mayor fuerza en etapas avanzadas de la carrera. Este segundo grupo es necesario para generar el contenido que consume el usuario primario, pero no lo reemplaza.
+
+## Necesidades reales
+
+- Encontrar material sin depender de pertenecer al grupo correcto ni de saber a quién pedírselo.
+- Recuperar contenidos ordenados, en lugar de buscarlos dentro de una acumulación de mensajes y archivos.
+- Identificar la materia, comisión, cuatrimestre y contexto de cada recurso.
+- Poder agregar advertencias o aclaraciones sobre el alcance y las posibles limitaciones del material compartido.
+- Recibir notificaciones sobre mensajes y novedades relevantes.
+- Acceder a contenidos y bibliografía que las cátedras no siempre publican a tiempo.
+- Participar en un espacio exclusivo de la carrera, sin spam ni intervenciones externas.
+- Realizar consultas entre estudiantes sin exponerlas necesariamente ante docentes.
+
+## Problemas y frustraciones
+
+El principal problema es el costo de recuperar la información. Los estudiantes deben conocer los canales adecuados, pertenecer a determinados grupos o saber a quién consultar. U3 resumió esta situación indicando que, en ocasiones, pasa más tiempo buscando un material que leyéndolo.
+
+Incluso cuando los recursos están centralizados en Discord, pueden quedar acumulados como en un repositorio sin suficiente organización. También se mezclan materiales, fechas y comentarios de distintas comisiones, y no siempre puede identificarse con claridad la vigencia o confiabilidad de un aporte.
+
+La búsqueda de compañeros no resultó ser una frustración relevante: dos de tres usuarios la resuelven sin dificultad. La fricción aparece después, al coordinar el funcionamiento del grupo. Por esta razón, encontrar compañeros deja de considerarse una necesidad principal del producto.
+
+## Contexto de uso
+
+Los tres usuarios entrevistados realizan las búsquedas principalmente desde una **computadora**, en su casa, con conectividad y de forma individual. Suelen hacerlo antes o después de cursar y alrededor de sus horarios de trabajo. Disponen de poco tiempo, aunque las búsquedas no suelen ocurrir en una situación de urgencia inmediata.
+
+La coincidencia de los tres casos no aporta evidencia para priorizar una aplicación móvil ni el uso sin conexión. En esta etapa, el producto debe priorizar una experiencia de escritorio que pueda utilizarse junto con otras ventanas y herramientas de estudio.
 
 ## Funcionalidades core
 
-1. Ofrecer canales de contacto entre estudiantes de las mismas materias y comisiones.
-2. Permitir compartir y consultar archivos, apuntes, enlaces y otros recursos útiles de las materias.
-3. Permitir reseñar y recomendar comisiones de las materias.
+1. Buscar y consultar materiales organizados por materia, comisión y cuatrimestre.
+2. Compartir apuntes, modelos de parcial, enlaces y otros recursos con información contextual y aclaraciones del autor.
+3. Ofrecer canales de consulta y contacto entre estudiantes de la misma cursada, separados de los espacios donde participan docentes.
+4. Permitir reseñar y consultar referencias sobre materias y comisiones.
+5. Notificar al usuario sobre respuestas y novedades relevantes.
 
-Estas funcionalidades son las mínimas sin las cuales el producto no cumpliría su propósito de centralizar la información y facilitar la colaboración entre estudiantes.
+La funcionalidad de búsqueda de compañeros de grupo deja de formar parte del núcleo de la solución porque el supuesto que la sostenía fue refutado.
 
 ## Integraciones previstas
 
-Se prevé una integración con el sistema institucional de la UNLaM para:
+Se mantiene prevista una integración con el sistema institucional de la UNLaM para comprobar la condición de estudiante regular y, si fuera técnicamente posible, verificar las materias y comisiones en las que está inscripto.
 
-- comprobar que una persona sea estudiante regular;
-- verificar las materias y comisiones en las que está inscripta;
-- habilitar el acceso a espacios relacionados con su cursada.
+El relevamiento confirmó que la verificación es valorada, pero no principalmente para evitar suplantaciones, como se planteó en la versión 1. Los usuarios la relacionan con impedir el ingreso de personas externas, reducir el spam y controlar la desinformación. La autorización institucional y la existencia de interfaces técnicas accesibles continúan sin evidencia y deberán investigarse por otra vía.
 
-La factibilidad técnica y la autorización institucional de esta integración todavía deben validarse. En particular, se debe confirmar si la Universidad dispone de servicios de autenticación o interfaces accesibles para aplicaciones externas.
+## Hipótesis de valor
 
-## Grupos de usuarios
+**Creemos que** el estudiante de Ingeniería en Informática de la UNLaM que cursa varias materias, tiene una ocupación fuera de la Universidad y busca materiales desde su computadora
 
-- **Estudiantes que buscan información:** quieren encontrar rápidamente materiales, referencias, canales y contactos de las materias y comisiones que cursan.
-- **Estudiantes que comparten recursos:** aportan apuntes, resúmenes, enlaces y otros materiales útiles para la comunidad.
-- **Estudiantes que buscan compañeros de grupo:** quieren encontrar personas afines con quienes cursar, estudiar o realizar trabajos y reducir las barreras de socialización.
+**tiene el problema de que** acceder a la información es complejo y depende de a quién conoce y de cómo busca. Encontrar un apunte, un modelo de parcial o una opinión sobre una comisión exige estar en los grupos correctos y saber a quién pedirlo. Cuando esa red existe, el intercambio se pierde en el desorden de los canales actuales.
 
-### Usuario primario
+**Nuestra solución es** UNLaMigos, un espacio de acceso verificado donde el material se organiza por materia, comisión y cuatrimestre; cada aporte incluye sus aclaraciones; los estudiantes pueden consultar y contactar a pares de su cursada sin conocerlos previamente; y las novedades llegan mediante notificaciones.
 
-El grupo elegido como usuario primario es el de **estudiantes que buscan información**, porque el problema principal identificado es la dispersión y la dificultad para encontrar materiales, contactos y referencias de cursada.
+**Sabremos que estamos en lo correcto cuando, durante la prueba del MVP:**
 
-Esta elección **todavía es hipotética** y deberá validarse mediante el relevamiento con usuarios del TP2. Los tres usuarios accesibles identificados por el equipo —estudiantes de segundo, tercer y quinto año— pertenecen inicialmente a este grupo y tienen disponibilidad confirmada para el relevamiento del TP2 y la prueba del MVP del TP5.
+- un estudiante que no participa de los grupos de una materia encuentre por sí solo un recurso de una comisión determinada en menos de cinco minutos;
+- un estudiante obtenga una respuesta útil de otro estudiante de su comisión con quien no tenía contacto previo;
+- al menos un usuario avanzado suba material propio junto con su contexto;
+- los usuarios identifiquen la comisión y el cuatrimestre de cada material sin abrirlo;
+- ningún usuario de prueba necesite recurrir a WhatsApp para completar la búsqueda.
 
-## Supuestos
+## Estado de los supuestos del TP1
 
-1. **Supuesto crítico:** a los estudiantes les resulta molesta la dispersión de información y comunicaciones entre medios como Discord y WhatsApp, y esto les dificulta encontrar lo que buscan. Si los estudiantes no perciben este problema ni desean una plataforma unificada, el producto pierde su razón de ser.
-2. Los estudiantes valoran que se verifique la condición de alumno regular para evitar suplantaciones.
-3. Existe un volumen considerable de estudiantes que siente frustración al intentar encontrar compañeros de cursada.
-4. Los estudiantes evitan usar plataformas oficiales de la Universidad para socializar por temor a quedar expuestos al equivocarse o hacer consultas básicas.
-5. Los estudiantes avanzados o que ya cursaron una materia están dispuestos a dedicar tiempo a subir materiales y escribir reseñas sin recibir una compensación.
-6. Los estudiantes prefieren adoptar una aplicación centralizada e independiente antes que continuar interactuando únicamente en las plataformas que ya usan, como Discord y WhatsApp.
-7. La Universidad permite que los estudiantes se conecten mediante aplicaciones externas públicamente relacionadas con la UNLaM.
-8. La Universidad dispone de medios técnicos o interfaces que permitan a una aplicación externa verificar la condición de alumno regular y las materias cursadas.
+| N.º | Supuesto | Estado | Evidencia del TP2 |
+|---:|---|---|---|
+| 1 | La dispersión de información molesta a los estudiantes y dificulta encontrar lo que buscan. **Supuesto crítico.** | **Confirmado (2 de 3)** | U2 informó muchos obstáculos y la necesidad de saber cómo buscar y a quién pedirle. U3 señaló que no existe un lugar centralizado y que a veces tarda más en buscar que en leer. U1 no manifestó frustración, pero valoró una organización mejor. |
+| 2 | Los estudiantes valoran la verificación de alumno regular para evitar suplantaciones. | **Confirmado (3 de 3), con el motivo reformulado** | Los tres valoraron la verificación, pero la asociaron con evitar spam, intervenciones externas y desinformación, no con la suplantación de identidad. |
+| 3 | Existe frustración al buscar compañeros de cursada. | **Refutado (2 de 3)** | U1 y U2 encuentran compañeros sin dificultad. U3 describió problemas de coordinación y organización posteriores, más que de acceso a un grupo. |
+| 4 | Los estudiantes evitan plataformas oficiales por miedo a la exposición. | **Confirmado (2 de 3), con matices** | U3 evita preguntas que puedan ver los docentes. U1 elige el canal según el tipo de consulta y U2 no percibe una diferencia relevante. La exposición observada se relaciona con los docentes, no con los pares. |
+| 5 | Los estudiantes avanzados aportan materiales y reseñas sin compensación. | **Confirmado en el perfil avanzado (1 de 1)** | U3 comparte resúmenes y opiniones para ayudar y aprovechar el esfuerzo realizado. U1 y U2 no pertenecen al alcance avanzado del supuesto. |
+| 6 | Los estudiantes adoptarían una aplicación centralizada en lugar de depender de Discord y WhatsApp. | **Confirmado declarativamente (3 de 3)** | Los tres afirmaron que usarían una solución centralizada y organizada. Esta intención todavía debe contrastarse mediante el uso del MVP. |
+| 7 | La Universidad permite aplicaciones externas públicamente relacionadas con la UNLaM. | **Sin evidencia** | Es un supuesto institucional fuera del alcance de las entrevistas y requiere consultar normativa o autoridades competentes. |
+| 8 | La Universidad dispone de interfaces para verificar alumnos y materias desde una aplicación externa. | **Sin evidencia** | Es un supuesto técnico fuera del alcance de las entrevistas y requiere consultar al área técnica institucional. |
 
-Todos estos supuestos deberán validarse con evidencia en los próximos trabajos prácticos. Los supuestos vinculados con las necesidades y conductas de los estudiantes se contrastarán principalmente en el relevamiento del TP2; los relacionados con permisos e integración se verificarán mediante una consulta institucional, la revisión de normativa y el análisis de los servicios técnicos disponibles.
+El supuesto crítico quedó confirmado: dos de tres usuarios experimentan el problema y el tercero, aunque conoce cómo resolverlo, también reconoce margen para mejorar la organización. Esto sostiene la continuidad del producto, pero obliga a que la solución sea más ordenada y recuperable que el repositorio de Discord existente.
+
+## Supuestos nuevos surgidos del relevamiento
+
+1. **Una experiencia de escritorio debe tener prioridad inicial.** Los tres usuarios relevados buscan materiales desde una computadora en su casa; falta comprobar este patrón con una muestra mayor.
+2. **Las notificaciones influyen en la adopción y recurrencia.** U2 identificó su ausencia como una razón concreta para no utilizar MIeL y el correo; deberá validarse con el MVP y con más usuarios.
+3. **Agregar contexto y advertencias puede aumentar la publicación de materiales.** U1 compartiría contenido si pudiera aclarar su procedencia, alcance y posibles errores; deberá observarse si esta posibilidad efectivamente genera aportes.
+4. **La organización debe superar a la centralización existente.** Como Discord ya concentra una parte importante de los recursos, el valor diferencial dependerá de que los estudiantes encuentren contenidos específicos con menos esfuerzo.
