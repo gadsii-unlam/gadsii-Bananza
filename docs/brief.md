@@ -1,114 +1,193 @@
-# Brief de Producto
+# Brief de Producto — Versión 3
 
-## Versión 2 — TP2
-
-Respecto de la versión 1, se reemplazó el perfil hipotético por un perfil construido a partir de las entrevistas a U1, U2 y U3. Se mantuvo como usuario primario al estudiante que busca información porque dos de los tres entrevistados manifestaron dificultades concretas y el tercero también valoró una mejor organización. El foco del producto pasó de solamente centralizar contenidos a organizarlos por materia, comisión y cuatrimestre, permitir contextualizar cada aporte e informar novedades mediante notificaciones. También se descartó la búsqueda de compañeros como necesidad principal, se reformuló el motivo de la verificación de usuarios y se actualizó cada supuesto según la evidencia obtenida.
+Respecto de la versión 2, se delimitó el alcance del MVP para validar la búsqueda de materiales y el intercambio entre estudiantes de una misma cursada sin depender de contactos previos. Se definió qué funcionalidades se construyen y qué aspectos se simulan o resuelven manualmente, se estableció el flujo principal de búsqueda y se priorizaron eficiencia, facilidad de aprendizaje y baja tasa de errores. Las reseñas, las notificaciones y la integración real con los sistemas de la UNLaM quedan fuera de esta primera versión. Se mantienen el segmento, el usuario primario y los hallazgos del TP2 como fundamento de estas decisiones.
 
 ## Segmento elegido
 
-El segmento está compuesto por **estudiantes regulares y activos de Ingeniería en Informática de la UNLaM**.
+Estudiantes regulares y activos de **Ingeniería en Informática de la UNLaM**.
 
-Se mantiene este segmento porque el relevamiento confirmó problemas concretos relacionados con la búsqueda y organización de información académica. Además, la pertenencia del equipo a la comunidad facilita el acceso a usuarios reales para validar el producto durante los siguientes trabajos prácticos.
+El relevamiento confirmó dificultades para buscar y organizar información académica. La pertenencia del equipo a esta comunidad facilita el acceso a usuarios reales para validar el producto.
 
-No existe una cifra oficial disponible sobre el tamaño del segmento. Como estimación inicial, se considera una población de entre 1.500 y 2.500 estudiantes activos en distintas etapas de la carrera.
+Como estimación inicial, se considera una población de entre 1.500 y 2.500 estudiantes activos. Esta cifra no proviene de una fuente oficial y permanece pendiente de validación.
 
 ## Producto
 
-**Nombre:** UNLaMigos.
+**UNLaMigos** es un espacio para estudiantes de Ingeniería en Informática de la UNLaM que permite encontrar y compartir materiales organizados por materia, comisión y cuatrimestre, y realizar consultas a compañeros de la misma cursada.
 
-UNLaMigos es un espacio de acceso verificado para estudiantes de Ingeniería en Informática de la UNLaM. Busca resolver la dificultad para encontrar materiales, referencias y contactos de cursada cuando la información está dispersa o acumulada sin orden en WhatsApp, Discord y MIeL.
+Su valor consiste en recuperar información con menos esfuerzo que en los canales actuales y reducir la dependencia de conocer a la persona correcta o pertenecer previamente a un grupo. Cada recurso incluye información de su cursada y puede incorporar aclaraciones sobre su procedencia, alcance o posibles errores.
 
-La propuesta no consiste únicamente en reunir la información existente. Debe permitir recuperarla con mayor facilidad que los canales actuales, atribuirla a una materia, comisión y cuatrimestre concretos, y reducir la dependencia de conocer a la persona correcta o pertenecer previamente al grupo adecuado.
+El producto contempla acceso verificado como objetivo. En el MVP, la condición de alumno regular y los datos de inscripción se simulan, sin integración institucional.
 
 ## Perfil del usuario real
 
-El usuario relevado es un estudiante activo de Ingeniería en Informática que cursa varias materias simultáneamente y tiene una ocupación fuera de la Universidad. Su tiempo de estudio se organiza en ventanas acotadas entre el trabajo y la cursada.
+El usuario relevado cursa varias materias simultáneamente y tiene una ocupación fuera de la Universidad. Organiza el estudio en períodos acotados entre el trabajo y la cursada.
 
-Los tres entrevistados cursan etapas intermedias o avanzadas de la carrera y buscan materiales principalmente desde una computadora en su casa. Utilizan WhatsApp, MIeL y Discord según la necesidad, sin un recorrido único. Suelen consumir apuntes y modelos de parciales. Los estudiantes menos avanzados comparten poco o solamente con personas conocidas, mientras que el usuario avanzado genera y comparte recursos con mayor frecuencia.
+Los tres entrevistados se encuentran en etapas intermedias o avanzadas y buscan materiales principalmente desde una computadora en su casa. Utilizan WhatsApp, MIeL y Discord según la necesidad, sin un recorrido único.
 
-Los tres perciben desorganización, aunque no todos sufren la misma dificultad para encontrar material. La diferencia observada no depende únicamente del año de cursada, sino también del acceso a contactos y del conocimiento de los canales donde buscar. Este perfil reemplaza al usuario hipotético definido en la versión 1.
+Consumen principalmente apuntes y modelos de parciales. Los estudiantes menos avanzados comparten poco o con personas conocidas, mientras que el usuario avanzado genera y comparte recursos con mayor frecuencia.
+
+La dificultad para encontrar información depende tanto de su organización como del acceso a contactos y del conocimiento de los canales disponibles.
 
 ## Usuario primario
 
-El usuario primario continúa siendo el grupo de **estudiantes que buscan información**. Dos de los tres entrevistados manifestaron dificultades frecuentes para encontrarla; el tercero logra resolver la búsqueda porque conoce los canales disponibles, pero igualmente considera valiosa una organización mejor.
+El usuario primario es el **estudiante que busca información**, especialmente quien cursa sin grupos ni contactos que le faciliten el acceso al material.
 
-Los tres usuarios relevados pertenecen a este grupo. Dos también comparten recursos, conducta que aparece con mayor fuerza en etapas avanzadas de la carrera. Este segundo grupo es necesario para generar el contenido que consume el usuario primario, pero no lo reemplaza.
+Dos de los tres entrevistados manifestaron dificultades frecuentes para encontrarlo. El tercero conoce los canales disponibles, pero también valora una mejor organización.
 
-## Necesidades reales
+Los estudiantes que aportan recursos constituyen un grupo complementario necesario para sostener el contenido del producto.
 
-- Encontrar material sin depender de pertenecer al grupo correcto ni de saber a quién pedírselo.
-- Recuperar contenidos ordenados, en lugar de buscarlos dentro de una acumulación de mensajes y archivos.
-- Identificar la materia, comisión, cuatrimestre y contexto de cada recurso.
-- Poder agregar advertencias o aclaraciones sobre el alcance y las posibles limitaciones del material compartido.
-- Recibir notificaciones sobre mensajes y novedades relevantes.
-- Acceder a contenidos y bibliografía que las cátedras no siempre publican a tiempo.
-- Participar en un espacio exclusivo de la carrera, sin spam ni intervenciones externas.
-- Realizar consultas entre estudiantes sin exponerlas necesariamente ante docentes.
+## Necesidades y problemas
 
-## Problemas y frustraciones
+Las necesidades principales son:
 
-El principal problema es el costo de recuperar la información. Los estudiantes deben conocer los canales adecuados, pertenecer a determinados grupos o saber a quién consultar. U3 resumió esta situación indicando que, en ocasiones, pasa más tiempo buscando un material que leyéndolo.
+* Encontrar material sin depender de contactos o grupos previos.
+* Recuperar contenidos organizados por materia, comisión y cuatrimestre.
+* Distinguir apuntes, parciales, finales y bibliografía.
+* Reconocer el contexto, la vigencia y las posibles limitaciones de cada aporte.
+* Consultar a estudiantes de la misma cursada en un espacio separado de los docentes.
+* Compartir recursos con aclaraciones sobre su procedencia y posibles errores.
 
-Incluso cuando los recursos están centralizados en Discord, pueden quedar acumulados como en un repositorio sin suficiente organización. También se mezclan materiales, fechas y comentarios de distintas comisiones, y no siempre puede identificarse con claridad la vigencia o confiabilidad de un aporte.
+El principal problema es el tiempo y el esfuerzo necesarios para recuperar información dispersa o acumulada sin orden. Incluso cuando los recursos están centralizados en Discord, pueden mezclarse materiales y comentarios de distintas comisiones.
 
-La búsqueda de compañeros no resultó ser una frustración relevante: dos de tres usuarios la resuelven sin dificultad. La fricción aparece después, al coordinar el funcionamiento del grupo. Por esta razón, encontrar compañeros deja de considerarse una necesidad principal del producto.
+También se detectó interés por recibir notificaciones y participar en un espacio exclusivo de la carrera. Estas necesidades se mantienen en la visión del producto, aunque no se implementan por completo en el MVP.
+
+La búsqueda de compañeros de grupo deja de ser una necesidad principal: dos de los tres entrevistados la resuelven sin dificultad y las fricciones observadas se relacionan más con la coordinación posterior.
 
 ## Contexto de uso
 
-Los tres usuarios entrevistados realizan las búsquedas principalmente desde una **computadora**, en su casa, con conectividad y de forma individual. Suelen hacerlo antes o después de cursar y alrededor de sus horarios de trabajo. Disponen de poco tiempo, aunque las búsquedas no suelen ocurrir en una situación de urgencia inmediata.
+Las búsquedas se realizan principalmente desde una **computadora**, en el hogar, con conectividad y de forma individual, antes o después de cursar y alrededor de los horarios de trabajo.
 
-La coincidencia de los tres casos no aporta evidencia para priorizar una aplicación móvil ni el uso sin conexión. En esta etapa, el producto debe priorizar una experiencia de escritorio que pueda utilizarse junto con otras ventanas y herramientas de estudio.
+Por ello, el MVP prioriza una experiencia web de escritorio que pueda utilizarse junto con otras herramientas de estudio. El relevamiento no aporta evidencia suficiente para priorizar una aplicación móvil ni el uso sin conexión.
 
-## Funcionalidades core
+## Hipótesis de valor del MVP
 
-1. Buscar y consultar materiales organizados por materia, comisión y cuatrimestre.
-2. Compartir apuntes, modelos de parcial, enlaces y otros recursos con información contextual y aclaraciones del autor.
-3. Ofrecer canales de consulta y contacto entre estudiantes de la misma cursada, separados de los espacios donde participan docentes.
-4. Permitir reseñar y consultar referencias sobre materias y comisiones.
-5. Notificar al usuario sobre respuestas y novedades relevantes.
+**Creemos que** un estudiante de Ingeniería en Informática de la UNLaM que cursa sin grupos ni contactos tiene dificultades para conseguir materiales y resolver consultas porque la información está dispersa y su acceso depende de conocer los canales o las personas adecuadas.
 
-La funcionalidad de búsqueda de compañeros de grupo deja de formar parte del núcleo de la solución porque el supuesto que la sostenía fue refutado.
-
-## Integraciones previstas
-
-Se mantiene prevista una integración con el sistema institucional de la UNLaM para comprobar la condición de estudiante regular y, si fuera técnicamente posible, verificar las materias y comisiones en las que está inscripto.
-
-El relevamiento confirmó que la verificación es valorada, pero no principalmente para evitar suplantaciones, como se planteó en la versión 1. Los usuarios la relacionan con impedir el ingreso de personas externas, reducir el spam y controlar la desinformación. La autorización institucional y la existencia de interfaces técnicas accesibles continúan sin evidencia y deberán investigarse por otra vía.
-
-## Hipótesis de valor
-
-**Creemos que** el estudiante de Ingeniería en Informática de la UNLaM que cursa varias materias, tiene una ocupación fuera de la Universidad y busca materiales desde su computadora
-
-**tiene el problema de que** acceder a la información es complejo y depende de a quién conoce y de cómo busca. Encontrar un apunte, un modelo de parcial o una opinión sobre una comisión exige estar en los grupos correctos y saber a quién pedirlo. Cuando esa red existe, el intercambio se pierde en el desorden de los canales actuales.
-
-**Nuestra solución es** UNLaMigos, un espacio de acceso verificado donde el material se organiza por materia, comisión y cuatrimestre; cada aporte incluye sus aclaraciones; los estudiantes pueden consultar y contactar a pares de su cursada sin conocerlos previamente; y las novedades llegan mediante notificaciones.
+**Nuestra solución es** UNLaMigos, un espacio que lo vincula con materiales y estudiantes por materia, comisión y cuatrimestre, permite reconocer el contexto de los recursos y ofrece un canal de consultas entre pares.
 
 **Sabremos que estamos en lo correcto cuando, durante la prueba del MVP:**
 
-- un estudiante que no participa de los grupos de una materia encuentre por sí solo un recurso de una comisión determinada en menos de cinco minutos;
-- un estudiante obtenga una respuesta útil de otro estudiante de su comisión con quien no tenía contacto previo;
-- al menos un usuario avanzado suba material propio junto con su contexto;
-- los usuarios identifiquen la comisión y el cuatrimestre de cada material sin abrirlo;
-- ningún usuario de prueba necesite recurrir a WhatsApp para completar la búsqueda.
+1. Un estudiante que no participa de los grupos de una materia encuentre por sí solo un recurso de una comisión determinada en menos de cinco minutos.
+2. Un estudiante obtenga una respuesta útil de otro estudiante de su comisión con quien no tenía contacto previo.
+3. Al menos un usuario avanzado suba material propio junto con su contexto, sin que el equipo le solicite ese aporte concreto.
+4. Los usuarios identifiquen la comisión y el cuatrimestre de cada material sin abrirlo.
+5. Ningún usuario de prueba necesite recurrir a WhatsApp para completar la búsqueda.
+
+## Alcance del MVP
+
+El MVP incluye únicamente lo necesario para poner a prueba la hipótesis de valor.
+
+| Incluido                                                                                            | Propósito                                                              |
+| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Registro con correo institucional y asociación a materias y comisiones de prueba                    | Ubicar al estudiante dentro de sus cursadas.                           |
+| Filtrado por comisión y cuatrimestre, aplicado inicialmente según la cursada seleccionada           | Reducir el esfuerzo de búsqueda y evitar confusiones entre recursos.   |
+| Apartados y etiquetas por tipo de material                                                          | Distinguir parciales, finales, apuntes, bibliografía y otros recursos. |
+| Listado y detalle de materiales, con visualización o acceso y opción de descarga cuando corresponda | Permitir que el estudiante encuentre y utilice un recurso.             |
+| Carga de materiales con datos de cursada y contexto                                                 | Comprobar si los estudiantes aportan contenido útil para otros.        |
+| Canal de consultas por comisión, con publicación y respuesta de mensajes                            | Facilitar respuestas entre estudiantes sin contacto previo.            |
+
+### Fuera del MVP
+
+| Excluido                                      | Motivo                                                                   |
+| --------------------------------------------- | ------------------------------------------------------------------------ |
+| Integración real con los sistemas de la UNLaM | No es necesaria para esta prueba, ya que no se prueba la integración.    |
+| Reseñas de materias y comisiones              | Ningún criterio de validación de esta primera prueba las mide.           |
+| Búsqueda de compañeros de grupo               | El relevamiento no la sostuvo como problema prioritario.                 |
+| Notificaciones                                | Se posterga su evaluación hasta después de validar las tareas centrales. |
+| Aplicación móvil                              | La evidencia disponible sostiene la prioridad de escritorio.             |
+| Uso sin conexión                              | No es necesario para el contexto relevado ni para probar la hipótesis.   |
+
+## Qué se construye y qué se simula
+
+| Elemento                            | Se construye                                                                                                    | Se simula o resuelve manualmente                                                                                                                   |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Registro y datos de cursada         | Registro con correo institucional y presentación de materias y comisiones asociadas.                            | La condición de alumno regular y la inscripción a materias y comisiones se representan con datos de prueba. No se consulta el sistema de la UNLaM. |
+| Filtros por comisión y cuatrimestre | Filtrado funcional de los recursos según la cursada seleccionada.                                               | No se simula su funcionamiento.                                                                                                                    |
+| Tipos de material                   | Clasificación, etiquetas y navegación por tipo de recurso.                                                      | No se simula su funcionamiento.                                                                                                                    |
+| Consulta de recursos                | Listado con contexto visible, detalle y acceso al material.                                                     | El equipo prepara previamente los recursos iniciales.                                                                                              |
+| Carga de material                   | Formulario funcional con materia, comisión, cuatrimestre, tipo de material y campos de contexto o advertencias. | El equipo realiza la carga inicial antes de la prueba. Los aportes de los participantes se registran por separado para evaluar el criterio 3.      |
+| Canal de consultas                  | Publicación y respuesta de mensajes entre usuarios.                                                             | Los canales por comisión se crean manualmente. Las respuestas que validan la hipótesis deben provenir de otro estudiante de la comisión.           |
+
+El registro con correo institucional no se considera evidencia suficiente de regularidad ni de inscripción. La prueba evalúa la experiencia con cursadas simuladas, no la eficacia de la verificación institucional.
+
+## Flujo principal del MVP
+
+**Objetivo:** encontrar y acceder a un recurso de la propia comisión sin recurrir a otra persona ni a otra plataforma.
+
+**Actor:** estudiante de Ingeniería en Informática que busca material.
+
+**Precondición:** existe material previamente cargado para una de las materias y comisiones asociadas al estudiante.
+
+1. El estudiante entra a UNLaMigos y se registra con su correo institucional.
+2. Visualiza las materias que cursa y la comisión y el cuatrimestre asociados a cada una, utilizando los datos preparados para la prueba.
+3. Selecciona una materia. El sistema aplica el contexto de su comisión y cuatrimestre y muestra los tipos de material disponibles.
+4. Selecciona un tipo de material, como parciales, finales, apuntes o bibliografía.
+5. Revisa el listado de recursos. Cada elemento muestra materia, comisión, cuatrimestre y el contexto disponible, sin necesidad de abrir el archivo.
+6. Selecciona un recurso y consulta su detalle, incluidas las aclaraciones o advertencias de quien lo publicó.
+7. Visualiza o accede al material y, cuando corresponde, lo descarga.
+
+**Postcondición:** el estudiante encuentra y accede a un recurso correspondiente a su cursada sin asistencia ni búsqueda externa.
+
+Si no hay resultados para la selección, la interfaz debe indicarlo y permitir revisar los filtros. No debe mostrar material de otra comisión como si correspondiera a la propia.
+
+Los flujos complementarios del MVP son publicar una consulta, responder a otro estudiante y cargar material con su contexto.
+
+## Atributos de usabilidad priorizados
+
+### 1. Eficiencia
+
+El estudiante debe encontrar material en pocos pasos y aprovechar el tiempo disponible entre el trabajo y la cursada.
+
+**Evidencia:** U3 señaló que “a veces pasás más tiempo buscándolo que leyéndolo”. U2 estudia después de trabajar y antes de cursar.
+
+**Decisiones de diseño:** acceso desde las propias materias, filtrado inicial por cursada, clasificación por tipo de material y contexto visible en el listado.
+
+**Evaluación:** observar si encuentra un recurso de la comisión indicada en menos de cinco minutos, sin recurrir a WhatsApp.
+
+### 2. Facilidad de aprendizaje
+
+El estudiante debe comprender el recorrido durante el primer uso, sin explicaciones del moderador ni un tutorial obligatorio.
+
+**Evidencia:** U3 describió dificultades para saber dónde preguntar cuando no pertenece a los grupos. Esto respalda la necesidad de un acceso comprensible sin contactos previos, aunque la facilidad de uso de la interfaz todavía debe comprobarse.
+
+**Decisiones de diseño:** vocabulario habitual de la cursada, filtros visibles y acciones claramente identificadas para consultar, descargar, publicar y responder.
+
+**Evaluación:** observar si completa el flujo principal sin asistencia y registrar dudas, retrocesos y pedidos de ayuda.
+
+### 3. Baja tasa de errores
+
+El estudiante debe poder distinguir materiales de diferentes comisiones y cuatrimestres y comprender sus posibles limitaciones.
+
+**Evidencia:** el relevamiento mostró mezcla de materiales y comentarios de distintas comisiones, junto con dificultades para reconocer su vigencia y contexto.
+
+**Decisiones de diseño:** mostrar comisión y cuatrimestre antes de abrir el recurso, mantener visible el contexto seleccionado y validar los datos de cursada en la carga. La prevención de errores es la estrategia principal para este atributo.
+
+**Evaluación:** registrar selecciones de recursos de una cursada equivocada, errores de clasificación y dificultades para identificar comisión y cuatrimestre.
+
+### Indicador complementario: satisfacción
+
+Se relevará si la experiencia resulta más cómoda y organizada que los canales actuales. Los tres entrevistados declararon interés por una solución centralizada, pero esa intención todavía debe contrastarse con el uso.
+
+La satisfacción se consultará al finalizar las tareas y no reemplazará la observación del desempeño.
 
 ## Estado de los supuestos del TP1
 
-| N.º | Supuesto | Estado | Evidencia del TP2 |
-|---:|---|---|---|
-| 1 | La dispersión de información molesta a los estudiantes y dificulta encontrar lo que buscan. **Supuesto crítico.** | **Confirmado (2 de 3)** | U2 informó muchos obstáculos y la necesidad de saber cómo buscar y a quién pedirle. U3 señaló que no existe un lugar centralizado y que a veces tarda más en buscar que en leer. U1 no manifestó frustración, pero valoró una organización mejor. |
-| 2 | Los estudiantes valoran la verificación de alumno regular para evitar suplantaciones. | **Confirmado (3 de 3), con el motivo reformulado** | Los tres valoraron la verificación, pero la asociaron con evitar spam, intervenciones externas y desinformación, no con la suplantación de identidad. |
-| 3 | Existe frustración al buscar compañeros de cursada. | **Refutado (2 de 3)** | U1 y U2 encuentran compañeros sin dificultad. U3 describió problemas de coordinación y organización posteriores, más que de acceso a un grupo. |
-| 4 | Los estudiantes evitan plataformas oficiales por miedo a la exposición. | **Confirmado (2 de 3), con matices** | U3 evita preguntas que puedan ver los docentes. U1 elige el canal según el tipo de consulta y U2 no percibe una diferencia relevante. La exposición observada se relaciona con los docentes, no con los pares. |
-| 5 | Los estudiantes avanzados aportan materiales y reseñas sin compensación. | **Confirmado en el perfil avanzado (1 de 1)** | U3 comparte resúmenes y opiniones para ayudar y aprovechar el esfuerzo realizado. U1 y U2 no pertenecen al alcance avanzado del supuesto. |
-| 6 | Los estudiantes adoptarían una aplicación centralizada en lugar de depender de Discord y WhatsApp. | **Confirmado declarativamente (3 de 3)** | Los tres afirmaron que usarían una solución centralizada y organizada. Esta intención todavía debe contrastarse mediante el uso del MVP. |
-| 7 | La Universidad permite aplicaciones externas públicamente relacionadas con la UNLaM. | **Sin evidencia** | Es un supuesto institucional fuera del alcance de las entrevistas y requiere consultar normativa o autoridades competentes. |
-| 8 | La Universidad dispone de interfaces para verificar alumnos y materias desde una aplicación externa. | **Sin evidencia** | Es un supuesto técnico fuera del alcance de las entrevistas y requiere consultar al área técnica institucional. |
+| N.º | Supuesto                                                                             | Estado según el TP2                                                                                                       |
+| --: | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+|   1 | La dispersión de información molesta y dificulta encontrar lo necesario.             | Confirmado en 2 de 3 entrevistas. Se mantiene como supuesto crítico que el MVP debe contrastar mediante tareas.           |
+|   2 | Los estudiantes valoran la verificación para evitar suplantaciones.                  | Los 3 valoraron la verificación, pero por reducir spam, intervenciones externas y desinformación. Se reformula el motivo. |
+|   3 | Existe frustración al buscar compañeros de cursada.                                  | Refutado en 2 de 3 entrevistas. Se excluye del MVP.                                                                       |
+|   4 | Los estudiantes evitan plataformas oficiales por miedo a la exposición.              | Confirmado con matices en 2 de 3 entrevistas; la exposición se relaciona con los docentes.                                |
+|   5 | Los estudiantes avanzados aportan materiales y reseñas sin compensación.             | Confirmado en el único perfil avanzado entrevistado. El MVP evaluará aportes de material; las reseñas quedan fuera.       |
+|   6 | Los estudiantes adoptarían una aplicación centralizada.                              | Confirmado declarativamente en 3 de 3 entrevistas. Pendiente de validación mediante uso.                                  |
+|   7 | La Universidad permite aplicaciones externas públicamente relacionadas con la UNLaM. | Sin evidencia. Requiere consulta institucional.                                                                           |
+|   8 | La Universidad dispone de interfaces para verificar alumnos y materias.              | Sin evidencia. Requiere consulta técnica.                                                                                 |
 
-El supuesto crítico quedó confirmado: dos de tres usuarios experimentan el problema y el tercero, aunque conoce cómo resolverlo, también reconoce margen para mejorar la organización. Esto sostiene la continuidad del producto, pero obliga a que la solución sea más ordenada y recuperable que el repositorio de Discord existente.
+## Supuestos pendientes y límites de validación
 
-## Supuestos nuevos surgidos del relevamiento
-
-1. **Una experiencia de escritorio debe tener prioridad inicial.** Los tres usuarios relevados buscan materiales desde una computadora en su casa; falta comprobar este patrón con una muestra mayor.
-2. **Las notificaciones influyen en la adopción y recurrencia.** U2 identificó su ausencia como una razón concreta para no utilizar MIeL y el correo; deberá validarse con el MVP y con más usuarios.
-3. **Agregar contexto y advertencias puede aumentar la publicación de materiales.** U1 compartiría contenido si pudiera aclarar su procedencia, alcance y posibles errores; deberá observarse si esta posibilidad efectivamente genera aportes.
-4. **La organización debe superar a la centralización existente.** Como Discord ya concentra una parte importante de los recursos, el valor diferencial dependerá de que los estudiantes encuentren contenidos específicos con menos esfuerzo.
+* **Prioridad de escritorio:** respaldada por los tres casos relevados; requiere una muestra mayor para generalizarla.
+* **Contexto y advertencias como incentivo para aportar:** se observará si los participantes publican materiales aprovechando estos campos.
+* **Organización como diferencial:** el MVP debe demostrar que permite recuperar contenido con menos esfuerzo que los canales actuales.
+* **Notificaciones y recurrencia:** su impacto no se valida en esta versión porque las notificaciones quedan fuera del alcance.
+* **Acceso verificado:** la simulación permite probar las tareas, pero no demuestra que el producto pueda controlar el acceso de personas externas.
+* **Adopción sostenida:** completar las tareas en una prueba inicial no demuestra que los estudiantes continúen utilizando la plataforma a lo largo del cuatrimestre.
