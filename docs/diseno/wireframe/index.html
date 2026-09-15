@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UNLaMigos — Wireframe TP3</title>
+  <style>
+/* Escala de grises y cajas simples: estructura, no identidad visual definitiva. */
+:root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; color: #222; background: #fff; line-height: 1.45; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button, .button { display: inline-block; border: 1px solid #666; border-radius: 0; background: #f3f3f3; padding: .5rem .75rem; cursor: pointer; text-align: center; text-decoration: none; }
+button:hover, .button:hover { background: #e4e4e4; }
+.primary { background: #333; color: white; border-color: #333; }
+.primary:hover { background: #111; }
+a { color: inherit; text-underline-offset: .18em; }
+:focus-visible { outline: 3px solid #222; outline-offset: 3px; }
+h1 { font-size: 1.65rem; margin: 0 0 .5rem; }
+h2 { font-size: 1.15rem; margin: 0 0 .7rem; }
+h3 { font-size: 1rem; margin: 1rem 0 .35rem; }
+p { margin: .4rem 0 1rem; }
+small, .muted { color: #555; }
+[hidden] { display: none !important; }
+.prototype, .app-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem 1.5rem; border-bottom: 1px solid #888; }
+.prototype { background: #eee; font-size: .875rem; }
+.prototype button { background: #fff; font-size: .875rem; }
+.flow-map { padding: .55rem 1.5rem; border-bottom: 1px dashed #888; font-size: .875rem; }
+summary { cursor: pointer; }
+.flow-map p { margin: .7rem 0; }
+.app-header { justify-content: flex-start; }
+.brand { font-weight: bold; font-size: 1.15rem; }
+#breadcrumbs { display: flex; gap: .6rem; flex-wrap: wrap; font-size: .9rem; }
+#contenido { max-width: 1600px; margin: auto; padding: 1.5rem; }
+.page-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+.actions { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
+.panel, .subject-card { border: 1px solid #888; padding: 1rem; min-width: 0; }
+.registration { max-width: 560px; margin: 1.5rem auto; padding: 1.5rem; }
+label { display: block; font-weight: bold; margin-bottom: .35rem; }
+input, select, textarea { display: block; width: 100%; border: 1px solid #777; background: white; padding: .6rem; border-radius: 0; }
+textarea { min-height: 100px; resize: vertical; }
+.field { margin-bottom: 1rem; }
+.help { font-size: .875rem; margin: .35rem 0 1rem; }
+.subject-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.subject-card dl { margin: 1rem 0; }
+dt { font-weight: bold; font-size: .85rem; margin-top: .7rem; }
+dd { margin: .15rem 0 0; overflow-wrap: anywhere; }
+.workspace { display: grid; grid-template-columns: 195px minmax(400px, 1fr) 280px; gap: .8rem; align-items: start; }
+.workspace .panel { padding: .85rem; }
+.filters { background: #f7f7f7; }
+.notice { border: 1px solid #666; border-left: 4px solid #444; background: #f1f1f1; padding: .75rem; font-size: .9rem; margin-bottom: 1rem; }
+.tag { display: inline-block; border: 1px solid #999; padding: .1rem .35rem; font-size: .78rem; margin: .15rem .15rem .15rem 0; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+caption { text-align: left; padding-bottom: .7rem; }
+th, td { border-bottom: 1px solid #aaa; padding: .65rem .45rem; text-align: left; vertical-align: top; }
+th { background: #eee; font-weight: bold; }
+td small { display: block; margin-top: .4rem; }
+tr.selected { background: #eee; }
+.text-button { border: 0; background: none; padding: 0; text-decoration: underline; text-align: left; }
+.text-button:hover { background: none; text-decoration-thickness: 2px; }
+.resource-title { font-weight: bold; overflow-wrap: anywhere; }
+.row-download { white-space: nowrap; font-size: .8rem; padding: .35rem .4rem; }
+.detail { border: 1px solid #555; }
+.detail dl { font-size: .9rem; }
+.detail .actions { align-items: stretch; flex-direction: column; }
+.detail .actions > * { width: 100%; }
+.empty { padding: 2rem .7rem; text-align: center; }
+.viewer-grid { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 1rem; align-items: start; }
+.document { border: 1px dashed #777; padding: 2rem; min-height: 380px; background: #fafafa; }
+.document pre { font: inherit; white-space: pre-wrap; overflow-wrap: anywhere; }
+.complement { max-width: 850px; margin: auto; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+.thread { border-top: 1px solid #999; padding: 1rem 0; }
+.reply { border-left: 2px solid #999; margin: .6rem 0 .6rem 1rem; padding: .5rem .8rem; }
+.user-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.status:empty { display: none; }
+.status { margin: 0 1.5rem 1rem; padding: .8rem; border: 1px solid #555; }
+.design-notes { margin: 0 1.5rem 1.5rem; border: 1px dashed #666; padding: 1rem; background: #f7f7f7; }
+.design-notes li { margin: .6rem 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { top: 0; left: 1rem; background: white; z-index: 5; padding: 1rem; }
+@media (max-width: 1100px) {
+  .workspace { grid-template-columns: 180px minmax(0, 1fr); }
+  .detail { grid-column: 2; }
+  .subject-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .prototype, .page-heading, .app-header { flex-direction: column; align-items: flex-start; }
+  #contenido { padding: 1rem; }
+  .workspace, .subject-grid, .viewer-grid, .form-grid { grid-template-columns: 1fr; }
+  .detail { grid-column: auto; }
+}
+@media print {
+  .prototype, .flow-map, .skip, .status { display: none; }
+  .workspace { grid-template-columns: 170px minmax(0, 1fr); }
+  .detail { grid-column: 2; }
+  .design-notes { break-inside: avoid; }
+}
+
+/* Disposición de la alternativa A aportada por el equipo. */
+:root { color-scheme: dark; color: #e6e6e6; background: #080808; font-size: 14px; }
+body { max-width: 1180px; margin: 8px auto; padding: 0 8px; }
+small, .muted { color: #ccc; }
+button, .button, input, select, textarea { background: #242424; color: #e6e6e6; border-color: #777; }
+button:hover, .button:hover { background: #383838; }
+.primary { background: #353535; border-color: #aaa; }
+.primary:hover { background: #454545; }
+:focus-visible { outline-color: #eee; }
+.app-header { background: #333; border: 1px solid #777; padding: 10px 12px; gap: 8px; }
+.brand { font-size: 1rem; font-weight: normal; text-decoration: none; }
+.brand::after { content: ' /'; }
+#breadcrumbs { font-size: 1rem; }
+#contenido { padding: 12px; background: #242424; border: 1px solid #777; border-top: 0; }
+#contenido:has(.workspace) { display: flex; flex-direction: column; gap: 12px; }
+#contenido:has(.workspace) > .page-heading { order: 2; border-top: 1px solid #555; padding-top: 12px; margin: 0; }
+#contenido:has(.workspace) > .page-heading h1 { font-size: 1rem; }
+#contenido:has(.workspace) > .page-heading p { font-size: .85rem; margin-bottom: 0; }
+.workspace { grid-template-columns: minmax(155px, .95fr) minmax(280px, 1.85fr) minmax(160px, .9fr); gap: 12px; align-items: stretch; }
+.workspace h2 { font-size: 1rem; font-weight: normal; }
+.workspace .panel { padding: 10px; }
+.panel, .subject-card { border-color: #777; }
+.filters, th, tr.selected, .notice, .document { background: #242424; }
+tr.selected { background: #383838; }
+.notice { border-color: #888; }
+.tag { border-color: #666; }
+.table-scroll { overflow-x: auto; }
+th, td { border-color: #555; }
+th { font-size: .8rem; }
+.resource-title { font-weight: normal; }
+.row-download { background: none; border: 0; }
+.detail { grid-column: auto; }
+.detail .panel { padding: 9px; }
+.detail .actions { margin-top: 1rem; }
+.help { font-size: .8rem; }
+.filters label { font-weight: normal; }
+.filters .field { margin-bottom: 8px; }
+.prototype { margin-top: 16px; padding: 10px 0; background: transparent; border: 0; color: #ccc; }
+.prototype button { background: #242424; }
+.flow-map { padding: 10px 0; border-color: #555; }
+.design-notes { margin: 12px 0; background: #242424; border-color: #777; }
+.status { margin: 12px 0; }
+.skip:focus { background: #242424; }
+@media (max-width: 900px) {
+  .workspace { grid-template-columns: 155px minmax(250px, 1fr) 160px; }
+  .workspace table { font-size: .78rem; }
+  .workspace th, .workspace td { padding: .5rem .25rem; }
+  .workspace .row-download { font-size: .75rem; }
+}
+@media (max-width: 720px) {
+  .workspace { grid-template-columns: 1fr; }
+  .detail { grid-column: auto; }
+}
+
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenido">Ir al contenido</a>
+  <header class="app-header">
+    <a class="brand" href="#materias">UNLaMigos</a>
+    <nav id="breadcrumbs" aria-label="Ruta de navegación"></nav>
+  </header>
+  <main id="contenido" tabindex="-1"></main>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+  <aside class="prototype" aria-label="Información del prototipo">
+    <div><strong>TP3 · Wireframe de baja fidelidad</strong><br><small>Alternativa A · Datos ficticios · Sin conexión con la Universidad</small></div>
+    <div class="actions">
+      <button id="toggle-notes" type="button" aria-expanded="false" aria-controls="design-notes">Mostrar anotaciones</button>
+      <button id="restart" type="button">Reiniciar prueba</button>
+    </div>
+  </aside>
+  <details class="flow-map">
+    <summary>Mapa de navegación del wireframe</summary>
+    <p><strong>Flujo principal:</strong> Registro → Mis materias → Materiales (filtros + tabla + detalle lateral) → Visualización del recurso.</p>
+    <p>La descarga también está disponible desde cada fila y desde el detalle lateral. Volver conserva los filtros. Desde Materiales se accede a los flujos complementarios de carga y consultas.</p>
+  </details>
+  <aside id="design-notes" class="design-notes" aria-label="Anotaciones de diseño" hidden></aside>
+  <noscript>Este wireframe necesita JavaScript para navegar y probar los filtros. Activá JavaScript y volvé a abrir el archivo.</noscript>
+  <script>
+'use strict';
+
+// Datos ficticios para recorrer el wireframe. No representan inscripciones reales.
+const subjects = [
+  { id: 'sistemas', name: 'Sistemas Operativos', commission: '2300', period: '2.º 2026' },
+  { id: 'paradigmas', name: 'Paradigmas de Programación', commission: '2400', period: '2.º 2026' },
+  { id: 'redes', name: 'Redes de Computadoras', commission: '2500', period: '2.º 2026' }
+];
+const types = ['Parcial', 'Final', 'Apunte', 'Bibliografía', 'Otro'];
+const initialResources = [
+  { id: 'r1', subject: 'sistemas', title: 'Parcial 1 — Procesos e hilos', type: 'Parcial', commission: '2300', period: '2.º 2026', teacher: 'Docente A', context: 'Modelo de práctica. Procesos, hilos y planificación.', warning: '', content: 'MODELO DE PRÁCTICA\n\n1. Explicá la diferencia entre un proceso y un hilo.\n2. Compará dos estrategias de planificación.\n3. Indicá qué información conserva el sistema al cambiar de proceso.' },
+  { id: 'r2', subject: 'sistemas', title: 'Apunte — Sincronización', type: 'Apunte', commission: '2300', period: '2.º 2026', teacher: 'Docente A', context: 'Resumen personal de la unidad de concurrencia.', warning: 'El ejercicio de semáforos no está corregido. Revisar su solución antes de estudiar.', content: 'APUNTE PERSONAL\n\nTemas: exclusión mutua, sección crítica y semáforos.\n\nEjercicio pendiente de revisión: coordinar dos procesos que comparten un recurso.' },
+  { id: 'r3', subject: 'sistemas', title: 'Bibliografía — Guía de lectura', type: 'Bibliografía', commission: '2300', period: '2.º 2026', teacher: 'Docente A', context: 'Índice de temas de la primera unidad. No reemplaza el programa de la cátedra.', warning: '', content: 'GUÍA DE LECTURA\n\nUnidad 1: procesos y administración del procesador.\nUnidad 2: concurrencia y sincronización.\n\nConsultar la bibliografía indicada por la cátedra.' },
+  { id: 'r4', subject: 'sistemas', title: 'Parcial 1 — Memoria', type: 'Parcial', commission: '2301', period: '2.º 2026', teacher: 'Docente B', context: 'Ejemplo de otra comisión. Incluye paginación y memoria virtual.', warning: 'El temario corresponde a la comisión 2301.', content: 'PRÁCTICA DE OTRA COMISIÓN\n\nDescribí el mecanismo de paginación y el tratamiento de un fallo de página.' },
+  { id: 'r5', subject: 'sistemas', title: 'Final — Repaso integrador', type: 'Final', commission: '2300', period: '1.º 2026', teacher: 'Docente A', context: 'Material de un cuatrimestre anterior.', warning: 'Los contenidos pueden haber cambiado respecto de la cursada actual.', content: 'REPASO INTEGRADOR\n\nProcesos, memoria y sistemas de archivos.\nCotejar los temas con el programa vigente.' },
+  { id: 'r6', subject: 'paradigmas', title: 'Apunte — Programación funcional', type: 'Apunte', commission: '2400', period: '2.º 2026', teacher: 'Docente C', context: 'Introducción a funciones puras e inmutabilidad.', warning: '', content: 'PROGRAMACIÓN FUNCIONAL\n\nDiferenciá una función pura de una función con efectos secundarios.\nProponé un ejemplo de transformación de una lista.' },
+  { id: 'r7', subject: 'redes', title: 'Apunte — Modelo de capas', type: 'Apunte', commission: '2500', period: '2.º 2026', teacher: 'Docente D', context: 'Esquema de repaso de las capas de una red.', warning: '', content: 'MODELO DE CAPAS\n\nIdentificá qué función cumple cada capa en el envío de un mensaje.' }
+];
+let resources = initialResources.map(resource => ({ ...resource }));
+let profile = null;
+let filters = {};
+let selected = {};
+let threads = [{ id: 'q1', subject: 'sistemas', author: 'Estudiante de ejemplo', text: '¿El primer parcial incluye planificación de procesos?', replies: [{ author: 'Compañero de ejemplo', text: 'En el material de esta comisión aparece en la primera unidad.' }] }];
+let sequence = 0;
+const main = document.querySelector('#contenido');
+const notes = document.querySelector('#design-notes');
+const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+const route = () => location.hash.slice(1).split('/');
+const subjectById = id => subjects.find(subject => subject.id === id);
+const resourceById = id => resources.find(resource => resource.id === id);
+const resourceContext = resource => `${resource.commission} · ${resource.period}`;
+const mismatch = (resource, subject) => resource.commission !== subject.commission || resource.period !== subject.period;
+function notify(message) { document.querySelector('#status').textContent = message; }
+function setRoute(value) { if (location.hash === '#' + value) render(); else location.hash = value; }
+function filtersFor(subject) {
+  return filters[subject.id] ||= { commission: subject.commission, period: subject.period, type: '' };
+}
+function options(values, current) {
+  return values.map(value => `<option value="${escapeHTML(value)}" ${value === current ? 'selected' : ''}>${escapeHTML(value)}</option>`).join('');
+}
+function crumb(items) {
+  document.querySelector('#breadcrumbs').innerHTML = items.map((item, index) => `${index ? '<span aria-hidden="true">/</span>' : ''}${item.href ? `<a href="#${item.href}">${escapeHTML(item.label)}</a>` : `<span aria-current="page">${escapeHTML(item.label)}</span>`}`).join('');
+}
+function annotations(items) {
+  notes.innerHTML = `<h2>Anotaciones de diseño · ${escapeHTML(document.title.split(' | ')[0])}</h2><ol>${items.map(item => `<li>${item}</li>`).join('')}</ol><p class="help">Fuente de las decisiones: TP3 aportado, puntos 1–7, y brief v3. Son decisiones a validar; este wireframe no demuestra los resultados de las pruebas.</p>`;
+}
+function title(text) { document.title = `${text} | UNLaMigos · TP3`; }
+function warningMarkup(resource, subject) {
+  return `${mismatch(resource, subject) ? `<div class="notice"><strong>Otra cursada.</strong> Este recurso es de ${escapeHTML(resourceContext(resource))}. Tu cursada: ${escapeHTML(resourceContext(subject))}.</div>` : ''}${resource.warning ? `<div class="notice"><strong>Advertencia del autor</strong><br>${escapeHTML(resource.warning)}</div>` : ''}`;
+}
+function metadata(resource) {
+  return `<dl><dt>Materia</dt><dd>${escapeHTML(subjectById(resource.subject).name)}</dd><dt>Comisión · Cuatrimestre</dt><dd>${escapeHTML(resourceContext(resource))}</dd><dt>Tipo de material</dt><dd>${escapeHTML(resource.type)}</dd><dt>Docente</dt><dd>${escapeHTML(resource.teacher || 'No indicado')}</dd><dt>Contexto del aporte</dt><dd>${escapeHTML(resource.context)}</dd></dl>`;
+}
+function renderRegistration() {
+  title('Registro'); crumb([{ label: 'Registro' }]);
+  main.innerHTML = `<section class="panel registration"><h1>Empezá por tus cursadas</h1><p>Encontrá materiales y consultas de las materias que cursás.</p><form id="registration-form"><div class="field"><label for="email">Correo institucional</label><input id="email" name="email" type="email" required autocomplete="email" aria-describedby="registration-help"></div><p id="registration-help" class="help">Para este recorrido podés usar el perfil de prueba, sin ingresar tus datos.</p><button class="primary" type="submit">Registrarme y ver mis materias</button></form><hr><button id="demo-profile" type="button">Usar perfil de prueba</button><p class="help">Incluye tres materias con sus comisiones y cuatrimestres de ejemplo.</p></section>`;
+  annotations(['<strong>Pantalla 1.</strong> El registro inicia el flujo definido en el punto 3. El acceso directo con perfil de prueba permite recorrerlo sin aportar datos personales.', 'La regularidad y la inscripción se simulan, según el punto 2. El formulario solo comprueba el formato del correo; no valida dominio, identidad ni inscripción y no envía datos.', 'No se agregan un tutorial obligatorio ni pasos de confirmación antes de ver las materias.']);
+}
+function renderSubjects() {
+  title('Mis materias'); crumb([{ label: 'Mis materias' }]);
+  main.innerHTML = `<div class="page-heading"><div><h1>Mis materias</h1><p>Elegí una materia para encontrar material de tu cursada.</p></div></div><section class="subject-grid" aria-label="Materias de tu cursada">${subjects.map(subject => `<article class="subject-card"><h2>${subject.name}</h2><dl><dt>Comisión</dt><dd>${subject.commission}</dd><dt>Cuatrimestre</dt><dd>${subject.period}</dd></dl><a class="button primary" href="#materiales/${subject.id}">Ver materiales<span class="sr-only"></span></a></article>`).join('')}</section>`;
+  annotations(['<strong>Pantalla 2.</strong> Las materias son el acceso principal, tal como define la alternativa A del punto 6. Comisión y cuatrimestre se reconocen antes de entrar.', 'Se usan las cursadas de prueba del perfil. Al abrir una materia, los filtros toman estos valores automáticamente, reduciendo la repetición de selecciones.', 'El acceso por cursada implementa la decisión del equipo de reducir la dependencia de grupos y contactos previos.']);
+}
+function renderMaterials(subject) {
+  title(`Materiales de ${subject.name}`); crumb([{ label: 'Mis materias', href: 'materias' }, { label: subject.name }]);
+  const filter = filtersFor(subject);
+  const commissions = [...new Set([subject.commission, ...resources.filter(r => r.subject === subject.id).map(r => r.commission)])];
+  const periods = [...new Set([subject.period, '1.º 2026', ...resources.filter(r => r.subject === subject.id).map(r => r.period)])];
+  const visible = resources.filter(r => r.subject === subject.id && r.commission === filter.commission && r.period === filter.period && (!filter.type || r.type === filter.type));
+  const chosen = visible.find(r => r.id === selected[subject.id]);
+  if (!chosen) delete selected[subject.id];
+  const changed = filter.commission !== subject.commission || filter.period !== subject.period;
+  main.innerHTML = `<div class="page-heading"><div><h1>${subject.name}</h1><p>Tu cursada: <strong>comisión ${subject.commission} · ${subject.period}</strong></p></div><div class="actions"><a class="button" href="#cargar/${subject.id}">Subir material</a><a class="button" href="#consultas/${subject.id}">Consultas de mi comisión</a></div></div>
+    <div class="workspace"><aside class="panel filters" aria-label="Filtros de materiales"><h2>Filtros</h2><p class="help" id="filter-help">Empezamos por tu cursada. Podés cambiar los filtros sin salir del listado.</p><div class="field"><label for="commission">Comisión</label><select id="commission" data-filter="commission" aria-describedby="filter-help">${options(commissions, filter.commission)}</select></div><div class="field"><label for="period">Cuatrimestre</label><select id="period" data-filter="period">${options(periods, filter.period)}</select></div><div class="field"><label for="type">Tipo de material</label><select id="type" data-filter="type"><option value="">Todos los tipos</option>${options(types, filter.type)}</select></div><button type="button" id="reset-filters">Restablecer mi cursada</button></aside>
+    <section class="panel results" aria-label="Resultados de materiales"><h2>Materiales</h2>${changed ? `<div class="notice"><strong>Estás viendo otra cursada:</strong> comisión ${escapeHTML(filter.commission)} · ${escapeHTML(filter.period)}. Tu cursada es ${subject.commission} · ${subject.period}.</div>` : ''}<p class="help">Elegí un título para ver el contexto y las advertencias en el panel lateral.</p><div class="table-scroll"><table><caption>${visible.length} ${visible.length === 1 ? 'recurso' : 'recursos'} · Comisión ${escapeHTML(filter.commission)} · ${escapeHTML(filter.period)}</caption><thead><tr><th scope="col">Recurso / Tipo</th><th scope="col">Comisión / Cuatrimestre</th><th scope="col">Docente</th><th scope="col">Acción</th></tr></thead><tbody>${visible.map(r => `<tr class="${chosen?.id === r.id ? 'selected' : ''}"><td><button class="text-button resource-title" type="button" data-select="${r.id}" aria-controls="resource-detail" aria-expanded="${chosen?.id === r.id}">${escapeHTML(r.title)}</button><br><span class="tag">${escapeHTML(r.type)}</span>${r.warning ? '<span class="tag">Con advertencia</span>' : ''}<small>${escapeHTML(r.context)}</small>${r.warning ? `<small><strong>Advertencia:</strong> ${escapeHTML(r.warning)}</small>` : ''}</td><td>${escapeHTML(r.commission)}<br>${escapeHTML(r.period)}${mismatch(r, subject) ? '<br><span class="tag">Otra cursada</span>' : ''}</td><td>${escapeHTML(r.teacher || 'No indicado')}</td><td><button type="button" class="row-download" data-download="${r.id}" aria-label="Descargar ${escapeHTML(r.title)}">↓ Descargar</button></td></tr>`).join('')}</tbody></table></div>${visible.length ? '' : '<div class="empty"><h3>No hay materiales para esta selección</h3><p>Probá otro tipo de material o revisá comisión y cuatrimestre.</p><button type="button" data-clear-type>Ver todos los tipos</button></div>'}</section>
+    <aside id="resource-detail" class="panel detail" aria-label="Detalle lateral">${chosen ? `<h2 id="detail-title" tabindex="-1">${escapeHTML(chosen.title)}</h2>${warningMarkup(chosen, subject)}${metadata(chosen)}${!chosen.warning ? '<p class="help">Sin advertencias del autor.</p>' : ''}<div class="actions"><a class="button" href="#recurso/${chosen.id}">Visualizar recurso</a><button class="primary" type="button" data-download="${chosen.id}">↓ Descargar</button><button type="button" id="close-detail">Cerrar detalle</button></div>` : '<h2>Detalle lateral</h2><p>Seleccioná el título de un recurso.</p><div class="panel">Contexto del aporte</div><br><div class="panel">Advertencias del autor</div>'}</aside></div>`;
+  annotations(['<strong>Pantalla 3.</strong> Se conserva la estructura de A: filtros a la izquierda, tabla al centro y detalle lateral a la derecha. Consultar un título no cambia de pantalla.', '<strong>Eficiencia:</strong> comisión y cuatrimestre precargados; tipo de material editable y descarga desde la fila. Responde a U3: “a veces pasás más tiempo buscándolo que leyéndolo”.', '<strong>Ajustes acordados en el punto 7:</strong> la ayuda breve acompaña los filtros, cada fila muestra su cursada y el aviso de otra cursada permanece visible cuando cambia la selección. Las advertencias se muestran también junto al recurso, antes de descargar.', 'No se fuerza la revisión de todos los recursos ni se añade una confirmación por descarga. Se conserva el costo de la alternativa A: el usuario puede omitir advertencias aunque estén visibles.', 'Un conjunto vacío se informa como tal; nunca se reemplaza silenciosamente por material de otra cursada. “Restablecer mi cursada” recupera los valores del perfil.', 'Subir material y Consultas son accesos complementarios del alcance acordado. Las consultas siempre corresponden a la comisión del perfil, aunque se exploren materiales de otra cursada.']);
+}
+function renderViewer(resource) {
+  const subject = subjectById(resource.subject);
+  title(resource.title); crumb([{ label: 'Mis materias', href: 'materias' }, { label: subject.name, href: `materiales/${subject.id}` }, { label: 'Recurso' }]);
+  main.innerHTML = `<div class="page-heading"><div><a href="#materiales/${subject.id}">← Volver a materiales</a><h1>${escapeHTML(resource.title)}</h1><p>Comisión ${escapeHTML(resourceContext(resource))}</p></div><button class="primary" type="button" data-download="${resource.id}">↓ Descargar</button></div><div class="viewer-grid"><section class="document" aria-label="Visualización del recurso"><h2>Vista del material</h2>${resource.file ? '<p>Archivo seleccionado durante esta prueba. Usá Descargar para recuperar el archivo original.</p>' : `<pre>${escapeHTML(resource.content)}</pre>`}</section><aside class="panel"><h2>Contexto y advertencias</h2>${warningMarkup(resource, subject)}${metadata(resource)}${!resource.warning ? '<p>Sin advertencias del autor.</p>' : ''}</aside></div>`;
+  annotations(['<strong>Pantalla 4.</strong> Visualización opcional después del detalle lateral. Completa el acceso al recurso del punto 3; la alternativa A conserva la descarga directa desde resultados.', 'Volver recupera los filtros y el recurso seleccionado. No se obliga a reiniciar la búsqueda.', 'El texto y los archivos descargables iniciales son muestras ficticias en formato TXT. Representan el área de visualización del documento; no son material académico ni parciales reales. Los archivos cargados durante la prueba se descargan en su formato original.']);
+}
+function renderUpload(subject) {
+  title('Subir material'); crumb([{ label: 'Mis materias', href: 'materias' }, { label: subject.name, href: `materiales/${subject.id}` }, { label: 'Subir material' }]);
+  main.innerHTML = `<section class="complement"><a href="#materiales/${subject.id}">← Volver a materiales</a><h1>Subir material</h1><p>Se publicará en <strong>${subject.name} · ${subject.commission} · ${subject.period}</strong>.</p><form id="upload-form" class="panel"><div class="field"><label for="upload-title">Título</label><input id="upload-title" name="title" required maxlength="120"></div><div class="form-grid"><div class="field"><label for="upload-type">Tipo de material</label><select id="upload-type" name="type" required><option value="">Seleccioná un tipo</option>${options(types, '')}</select></div><div class="field"><label for="upload-teacher">Docente (opcional)</label><input id="upload-teacher" name="teacher" maxlength="80"></div></div><div class="field"><label for="upload-context">Contexto del aporte</label><textarea id="upload-context" name="context" required maxlength="1000" placeholder="Indicá temas, procedencia y alcance del material."></textarea></div><div class="field"><label for="upload-warning">Advertencias (opcional)</label><textarea id="upload-warning" name="warning" maxlength="1000" placeholder="Por ejemplo: ejercicio sin corregir o unidad incompleta."></textarea></div><div class="field"><label for="upload-file">Archivo</label><input id="upload-file" type="file" name="file" required></div><div class="actions"><button class="primary" type="submit">Publicar material</button><a href="#materiales/${subject.id}">Cancelar</a></div></form></section>`;
+  annotations(['<strong>Flujo complementario.</strong> Implementa el formulario con datos de cursada y contexto ya incluido en el alcance, sin convertirlo en un paso de la búsqueda.', 'Materia, comisión y cuatrimestre provienen de la cursada desde la que se abrió el formulario y se muestran antes de publicar. Este recorrido acotado carga material de la propia comisión.', 'Los campos de contexto y advertencias responden a las condiciones que U1 expresó para compartir. Los campos obligatorios se validan antes de publicar.', 'La publicación y el archivo permanecen solo en la memoria de esta pestaña. No hay servidor ni carga a servicios externos; reiniciar o recargar elimina los aportes de prueba.']);
+}
+function renderQuestions(subject) {
+  title('Consultas de mi comisión'); crumb([{ label: 'Mis materias', href: 'materias' }, { label: subject.name, href: `materiales/${subject.id}` }, { label: 'Consultas' }]);
+  main.innerHTML = `<section class="complement"><a href="#materiales/${subject.id}">← Volver a materiales</a><h1>Consultas de mi comisión</h1><p><strong>${subject.name} · ${subject.commission} · ${subject.period}</strong></p><form id="question-form" class="panel"><label for="question">Tu consulta</label><textarea id="question" name="question" required maxlength="1000"></textarea><p class="help">Agregá el tema y la duda para que tus compañeros puedan ayudarte.</p><button class="primary" type="submit">Publicar consulta</button></form><section aria-label="Conversaciones"><h2>Consultas de la cursada</h2>${threads.filter(t => t.subject === subject.id).map(t => `<article class="thread"><strong>${escapeHTML(t.author)}</strong><p class="user-text">${escapeHTML(t.text)}</p>${t.replies.map(reply => `<div class="reply"><strong>${escapeHTML(reply.author)}</strong><p class="user-text">${escapeHTML(reply.text)}</p></div>`).join('')}<form data-reply="${t.id}"><label for="reply-${t.id}">Tu respuesta</label><textarea id="reply-${t.id}" name="reply" required maxlength="1000"></textarea><button type="submit">Responder</button></form></article>`).join('') || '<p>Todavía no hay consultas en esta comisión.</p>'}</section></section>`;
+  annotations(['<strong>Flujo complementario.</strong> Canal por comisión con publicación y respuesta, de acuerdo con los puntos 1 y 2. No se agregan notificaciones ni búsqueda de grupos.', 'Las conversaciones iniciales están rotuladas como ejemplos. Las intervenciones nuevas se atribuyen a “Vos”; el prototipo no genera respuestas automáticas de supuestos compañeros.', 'La interacción es local a esta pestaña. Para medir el criterio de una respuesta útil de otro estudiante será necesario construir el canal compartido; este wireframe solo permite evaluar la navegación y los formularios.']);
+}
+function render() {
+  let [page, id] = route();
+  if (!profile) page = 'registro';
+  if (!page) page = profile ? 'materias' : 'registro';
+  const subject = subjectById(id);
+  const resource = resourceById(id);
+  if (page === 'registro') renderRegistration();
+  else if (page === 'materias') renderSubjects();
+  else if (page === 'materiales' && subject) renderMaterials(subject);
+  else if (page === 'recurso' && resource) renderViewer(resource);
+  else if (page === 'cargar' && subject) renderUpload(subject);
+  else if (page === 'consultas' && subject) renderQuestions(subject);
+  else { title('Página no encontrada'); crumb([{ label: 'Mis materias', href: 'materias' }]); main.innerHTML = '<h1>Página no encontrada</h1><p><a href="#materias">Volver a mis materias</a></p>'; annotations(['Esta dirección no corresponde a una pantalla del prototipo.']); }
+}
+function download(resource) {
+  const sample = `UNLaMigos — Muestra ficticia del wireframe TP3\nNo es material académico real.\n\n${resource.title}\n${subjectById(resource.subject).name}\nComisión ${resourceContext(resource)}\nContexto: ${resource.context}\nAdvertencias: ${resource.warning || 'Sin advertencias del autor.'}\n\n${resource.content || ''}\n`;
+  const blob = resource.file || new Blob([sample], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url; link.download = resource.file?.name || `${resource.id}-material-de-ejemplo.txt`;
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+  notify(`Descarga solicitada: ${resource.title}.`);
+}
+document.addEventListener('click', event => {
+  if (event.target.closest('.skip')) { event.preventDefault(); main.focus(); return; }
+  const target = event.target.closest('button');
+  if (!target) return;
+  const subject = subjectById(route()[1]);
+  if (target.id === 'demo-profile') { profile = { demo: true }; setRoute('materias'); }
+  if (target.id === 'toggle-notes') {
+    notes.hidden = !notes.hidden;
+    target.setAttribute('aria-expanded', String(!notes.hidden));
+    target.textContent = notes.hidden ? 'Mostrar anotaciones' : 'Ocultar anotaciones';
+  }
+  if (target.id === 'restart') {
+    if (!confirm('¿Reiniciar la prueba? Se borrarán los materiales y mensajes que agregaste en esta pestaña.')) return;
+    resources = initialResources.map(r => ({ ...r })); threads = threads.filter(t => t.id === 'q1');
+    threads[0].replies = threads[0].replies.slice(0, 1);
+    profile = null; filters = {}; selected = {}; notify('Prueba reiniciada.'); setRoute('registro');
+  }
+  if (target.dataset.select && subject) {
+    selected[subject.id] = target.dataset.select; render(); document.querySelector('#detail-title')?.focus();
+  }
+  if (target.dataset.download) { const resource = resourceById(target.dataset.download); if (resource) download(resource); }
+  if (target.id === 'close-detail' && subject) {
+    const previous = selected[subject.id]; delete selected[subject.id]; render(); document.querySelector(`[data-select="${previous}"]`)?.focus();
+  }
+  if (target.id === 'reset-filters' && subject) { delete filters[subject.id]; render(); document.querySelector('#commission').focus(); notify('Filtros restablecidos a tu cursada.'); }
+  if (target.hasAttribute('data-clear-type') && subject) { filtersFor(subject).type = ''; render(); document.querySelector('#type').focus(); }
+});
+document.addEventListener('change', event => {
+  const key = event.target.dataset.filter;
+  const subject = subjectById(route()[1]);
+  if (key && subject) {
+    filtersFor(subject)[key] = event.target.value;
+    const controlId = event.target.id;
+    render(); document.getElementById(controlId).focus();
+    notify(document.querySelector('caption').textContent);
+  }
+});
+document.addEventListener('submit', event => {
+  const form = event.target; event.preventDefault();
+  const data = new FormData(form);
+  const subject = subjectById(route()[1]);
+  // Native required/email checks run before submit; trim also rejects whitespace-only text.
+  for (const field of form.querySelectorAll('input[required]:not([type=file]), textarea[required]')) {
+    if (!field.value.trim()) { field.setCustomValidity('Completá este campo con texto.'); field.reportValidity(); return; }
+  }
+  if (form.id === 'registration-form') { profile = { demo: false }; setRoute('materias'); }
+  if (form.id === 'upload-form' && subject) {
+    const id = `u${++sequence}`;
+    resources.push({ id, subject: subject.id, commission: subject.commission, period: subject.period, title: data.get('title').trim(), type: data.get('type'), teacher: data.get('teacher').trim(), context: data.get('context').trim(), warning: data.get('warning').trim(), file: data.get('file') });
+    filters[subject.id] = { commission: subject.commission, period: subject.period, type: data.get('type') }; selected[subject.id] = id;
+    setRoute(`materiales/${subject.id}`); notify('Material agregado a esta prueba.');
+  }
+  if (form.id === 'question-form' && subject) {
+    threads.push({ id: `q${++sequence + 1}`, subject: subject.id, author: 'Vos', text: data.get('question').trim(), replies: [] });
+    render(); document.querySelector('#question').focus(); notify('Consulta agregada a esta prueba.');
+  }
+  if (form.dataset.reply) {
+    const thread = threads.find(t => t.id === form.dataset.reply);
+    if (thread) { thread.replies.push({ author: 'Vos', text: data.get('reply').trim() }); render(); document.getElementById(`reply-${thread.id}`).focus(); notify('Respuesta agregada a esta prueba.'); }
+  }
+});
+document.addEventListener('input', event => { if (event.target.setCustomValidity) event.target.setCustomValidity(''); });
+window.addEventListener('hashchange', () => { render(); main.focus(); window.scrollTo(0, 0); });
+render();
+
+  </script>
+</body>
+</html>
