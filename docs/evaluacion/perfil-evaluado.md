@@ -1,0 +1,4 @@
+Quién es el usuario: El usuario de “¿Dónde queda?” es un ingresante o estudiante de primer año de la UNLaM que todavía no conoce bien la distribución del campus y necesita llegar a algún lugar sin preguntarle a alguien. 
+En qué contexto lo usa: Lo usa desde el celular, caminando por el campus y con poco margen de tiempo, donde la señal de datos suele ser irregular, puede encontrarse con un pasillo cerrado o con lluvia. 
+Qué atributos de usabilidad priorizó: El equipo priorizó eficiencia, porque el margen de tiempo es corto, tasa de errores, para evitar errores y los tramos cerrados que mencionan los usuarios, y facilidad de aprendizaje, porque el usuario recién está conociendo la universidad. 
+Cuál es la hipótesis: El MVP busca validar que, con al menos cinco usuarios del grupo primario, cuatro logren llegar a su destino en menos de cinco minutos, sin pedir indicaciones y sin que la ruta calculada los dirija por un acceso cerrado. 
