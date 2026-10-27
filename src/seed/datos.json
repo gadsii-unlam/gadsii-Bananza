@@ -1,0 +1,260 @@
+{
+  "_nota": "Datos de prueba que el equipo carga a mano antes de la sesión (lo que el TP3 decidió simular). Reemplazar comisiones, correos y materiales por los reales de los participantes antes de probar. Correr `npm run reset` después de editar.",
+  "materias": [
+    {
+      "id": "sistemas-operativos",
+      "nombre": "Sistemas Operativos"
+    },
+    {
+      "id": "paradigmas",
+      "nombre": "Paradigmas de Programación"
+    },
+    {
+      "id": "redes",
+      "nombre": "Redes de Computadoras"
+    },
+    {
+      "id": "requisitos-avanzados",
+      "nombre": "Requisitos Avanzados"
+    },
+    {
+      "id": "probabilidad",
+      "nombre": "Probabilidad y Estadística"
+    },
+    {
+      "id": "gestion-2",
+      "nombre": "Gestión Aplicada al Desarrollo de Software II"
+    }
+  ],
+  "comisiones": [
+    {
+      "materia": "sistemas-operativos",
+      "codigo": "2300",
+      "cuatrimestre": "2.º 2026",
+      "docente": "Docente A"
+    },
+    {
+      "materia": "sistemas-operativos",
+      "codigo": "2301",
+      "cuatrimestre": "2.º 2026",
+      "docente": "Docente B"
+    },
+    {
+      "materia": "sistemas-operativos",
+      "codigo": "2300",
+      "cuatrimestre": "1.º 2026",
+      "docente": "Docente A",
+      "activa": false
+    },
+    {
+      "materia": "paradigmas",
+      "codigo": "2400",
+      "cuatrimestre": "2.º 2026",
+      "docente": "Docente C"
+    },
+    {
+      "materia": "paradigmas",
+      "codigo": "2401",
+      "cuatrimestre": "2.º 2026",
+      "docente": "Docente E"
+    },
+    {
+      "materia": "redes",
+      "codigo": "2500",
+      "cuatrimestre": "2.º 2026",
+      "docente": "Docente D"
+    },
+    {
+      "materia": "requisitos-avanzados",
+      "codigo": "2600",
+      "cuatrimestre": "2.º 2026",
+      "docente": "Docente F"
+    },
+    {
+      "materia": "probabilidad",
+      "codigo": "2700",
+      "cuatrimestre": "2.º 2026",
+      "docente": "Docente G"
+    },
+    {
+      "materia": "gestion-2",
+      "codigo": "3665",
+      "cuatrimestre": "2.º 2026",
+      "docente": "Docente H"
+    }
+  ],
+  "inscripciones_precargadas": [
+    {
+      "email": "u1@alumno.unlam.edu.ar",
+      "cursadas": [
+        [
+          "sistemas-operativos",
+          "2300",
+          "2.º 2026"
+        ],
+        [
+          "paradigmas",
+          "2400",
+          "2.º 2026"
+        ],
+        [
+          "redes",
+          "2500",
+          "2.º 2026"
+        ]
+      ]
+    },
+    {
+      "email": "u2@alumno.unlam.edu.ar",
+      "cursadas": [
+        [
+          "sistemas-operativos",
+          "2300",
+          "2.º 2026"
+        ],
+        [
+          "paradigmas",
+          "2400",
+          "2.º 2026"
+        ]
+      ]
+    },
+    {
+      "email": "u3@alumno.unlam.edu.ar",
+      "cursadas": [
+        [
+          "sistemas-operativos",
+          "2300",
+          "2.º 2026"
+        ],
+        [
+          "gestion-2",
+          "3665",
+          "2.º 2026"
+        ]
+      ]
+    }
+  ],
+  "materiales": [
+    {
+      "materia": "sistemas-operativos",
+      "codigo": "2300",
+      "cuatrimestre": "2.º 2026",
+      "tipo": "Parcial",
+      "titulo": "Parcial 1 — Procesos e hilos",
+      "docente": "Docente A",
+      "tema": "Unidad 1 y 2",
+      "contexto": "Modelo de práctica que dio la cátedra. Procesos, hilos y planificación.",
+      "advertencia": "",
+      "archivo": "so-parcial1-procesos.pdf"
+    },
+    {
+      "materia": "sistemas-operativos",
+      "codigo": "2300",
+      "cuatrimestre": "2.º 2026",
+      "tipo": "Apunte",
+      "titulo": "Apunte — Sincronización",
+      "docente": "Docente A",
+      "tema": "Concurrencia",
+      "contexto": "Resumen personal de la unidad de concurrencia.",
+      "advertencia": "El ejercicio de semáforos no está corregido. Revisar su solución antes de estudiar.",
+      "archivo": "so-apunte-sincronizacion.md"
+    },
+    {
+      "materia": "sistemas-operativos",
+      "codigo": "2300",
+      "cuatrimestre": "2.º 2026",
+      "tipo": "Bibliografía",
+      "titulo": "Guía de lectura — Unidades 1 y 2",
+      "docente": "Docente A",
+      "tema": "Bibliografía",
+      "contexto": "Índice de temas de la primera parte. No reemplaza el programa de la cátedra.",
+      "advertencia": "",
+      "archivo": "so-guia-lectura.md"
+    },
+    {
+      "materia": "sistemas-operativos",
+      "codigo": "2301",
+      "cuatrimestre": "2.º 2026",
+      "tipo": "Parcial",
+      "titulo": "Parcial 1 — Memoria",
+      "docente": "Docente B",
+      "tema": "Memoria virtual",
+      "contexto": "Parcial de otra comisión. Incluye paginación y memoria virtual.",
+      "advertencia": "El temario corresponde a la comisión 2301.",
+      "archivo": "so-parcial1-memoria-2301.pdf"
+    },
+    {
+      "materia": "sistemas-operativos",
+      "codigo": "2300",
+      "cuatrimestre": "1.º 2026",
+      "tipo": "Final",
+      "titulo": "Final — Repaso integrador",
+      "docente": "Docente A",
+      "tema": "Integrador",
+      "contexto": "Material de un cuatrimestre anterior.",
+      "advertencia": "Los contenidos pueden haber cambiado respecto de la cursada actual.",
+      "archivo": "so-final-integrador.md"
+    },
+    {
+      "materia": "paradigmas",
+      "codigo": "2400",
+      "cuatrimestre": "2.º 2026",
+      "tipo": "Apunte",
+      "titulo": "Apunte — Programación funcional",
+      "docente": "Docente C",
+      "tema": "Funcional",
+      "contexto": "Introducción a funciones puras e inmutabilidad.",
+      "advertencia": "",
+      "archivo": "paradigmas-funcional.md"
+    },
+    {
+      "materia": "paradigmas",
+      "codigo": "2400",
+      "cuatrimestre": "2.º 2026",
+      "tipo": "Parcial",
+      "titulo": "Parcial 1 — Lógico y funcional",
+      "docente": "Docente C",
+      "tema": "Unidades 1 a 3",
+      "contexto": "Enunciado reconstruido de memoria después del parcial.",
+      "advertencia": "Puede faltar el último ejercicio.",
+      "archivo": "paradigmas-parcial1.pdf"
+    },
+    {
+      "materia": "redes",
+      "codigo": "2500",
+      "cuatrimestre": "2.º 2026",
+      "tipo": "Apunte",
+      "titulo": "Apunte — Modelo de capas",
+      "docente": "Docente D",
+      "tema": "Modelo OSI y TCP/IP",
+      "contexto": "Esquema de repaso de las capas de una red.",
+      "advertencia": "",
+      "archivo": "redes-capas.md"
+    },
+    {
+      "materia": "gestion-2",
+      "codigo": "3665",
+      "cuatrimestre": "2.º 2026",
+      "tipo": "Apunte",
+      "titulo": "Resumen — Lean Startup cap. 7 a 9",
+      "docente": "Docente H",
+      "tema": "Clase 5",
+      "contexto": "Resumen de los capítulos de lectura del TP5.",
+      "advertencia": "",
+      "archivo": "gestion-lean-startup.md"
+    },
+    {
+      "materia": "sistemas-operativos",
+      "codigo": "2300",
+      "cuatrimestre": "2.º 2026",
+      "tipo": "Final",
+      "titulo": "Final — Temas de diciembre 2025",
+      "docente": "Docente A",
+      "tema": "Integrador",
+      "contexto": "Temas que tomaron en el final de diciembre, reconstruidos por quienes rindieron.",
+      "advertencia": "No es el enunciado oficial: puede faltar algún punto.",
+      "archivo": "so-final-dic2025.md"
+    }
+  ]
+}

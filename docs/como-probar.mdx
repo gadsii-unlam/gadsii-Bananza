@@ -1,0 +1,148 @@
+---
+title: Cómo probar el MVP de UNLaMigos
+description: Guía para levantar el MVP del TP5 en una computadora y recorrer el flujo principal y las correcciones del TP4.
+---
+
+# Cómo probar el MVP de UNLaMigos
+
+Esta guía sirve para levantar el MVP en una computadora del equipo y comprobar, paso a paso, que el flujo principal y las correcciones del TP4 funcionan. No reemplaza al guion de la sesión con usuarios (`docs/evidencia/tp5/guion-sesion.md`): es para que el equipo lo pruebe antes.
+
+## 1. Requisitos
+
+- **Node.js 22.13 o superior.** El MVP usa `node:sqlite` y no necesita `npm install`.
+- Un navegador actualizado: Chrome, Firefox o Edge.
+
+Para ver qué versión de Node tenés:
+
+```bash
+node --version
+```
+
+## 2. Levantar el servidor
+
+Desde la raíz del repositorio:
+
+```bash
+cd src
+npm run reset                 # crea la base y carga los datos de prueba (borra lo anterior)
+ADMIN_KEY=una-clave npm start
+```
+
+En la consola tiene que aparecer:
+
+```text
+UNLaMigos MVP en http://localhost:3000
+Panel del equipo: http://localhost:3000/admin.html?clave=una-clave
+```
+
+| Variable | Para qué sirve | Valor por defecto |
+|---|---|---|
+| `PORT` | Puerto del servidor | `3000` |
+| `ADMIN_KEY` | Clave del panel del equipo | Se genera sola y se muestra en la consola |
+| `DATA_DIR` | Carpeta de la base y los archivos subidos | `src/data/` |
+| `EMAIL_DOMINIO` | Dominio de correo aceptado | `unlam.edu.ar` |
+
+> En Windows (PowerShell) las variables se definen así: `$env:ADMIN_KEY="una-clave"; npm start`.
+
+Para cortar el servidor: `Ctrl + C`.
+
+## 3. Usuarios de prueba
+
+Los datos de ejemplo están en `src/seed/datos.json`. Estos correos ya tienen sus cursadas precargadas:
+
+| Correo | Cursadas precargadas |
+|---|---|
+| `u1@alumno.unlam.edu.ar` | Sistemas Operativos 2300, Paradigmas 2400, Redes 2500 |
+| `u2@alumno.unlam.edu.ar` | Sistemas Operativos 2300, Paradigmas 2400 |
+| `u3@alumno.unlam.edu.ar` | Sistemas Operativos 2300, Gestión 2 3665 |
+
+Cualquier otro correo que termine en `unlam.edu.ar` también entra. En ese caso, el estudiante elige sus comisiones a mano.
+
+No hay contraseña: el registro está simulado (ver `src/README.md`, «Qué se simula»).
+
+> Para probar las consultas entre dos personas, abrí una ventana normal con U1 y otra de **incógnito** con U2. Cada ventana guarda su propia sesión.
+
+## 4. Recorrido del flujo principal
+
+Marcá cada paso a medida que lo comprobás.
+
+### 4.1 Ingreso
+
+1. Entrá a `http://localhost:3000`.
+2. Escribí `u1@alumno.unlam.edu.ar` y tocá **Ingresar**.
+3. Como es la primera vez, te pide un nombre o apodo. Escribilo y tocá **Continuar**.
+4. Tenés que llegar a **Mis materias** con tres tarjetas: Sistemas Operativos, Paradigmas y Redes.
+
+### 4.2 Buscar material de la propia cursada
+
+1. En Sistemas Operativos tocá **Materiales**.
+2. Arriba tiene que decir «Tu cursada: Comisión 2300 · 2.º 2026», y los filtros tienen que estar en esa misma cursada.
+3. Los botones de tipo muestran cuántos materiales hay de cada uno.
+4. Tocá el título de un material: se abre el **detalle** a la derecha (en celular, desde abajo).
+5. Tocá **Ver material**: se abre el visor (PDF o texto con formato).
+6. Tocá **Descargar**: el archivo se descarga.
+
+### 4.3 Subir material
+
+1. Tocá **Subir material**.
+2. Completá cursada, tipo, título, contexto (obligatorio) y, si querés, una advertencia.
+3. Adjuntá un archivo (o arrastralo) o pegá un enlace, y tocá **Publicar material**.
+4. Tenés que volver a la materia, con el material nuevo seleccionado. Como es tuyo, el detalle muestra **Eliminar mi aporte**.
+
+### 4.4 Consultas de la comisión
+
+1. Con U1, entrá a Sistemas Operativos, pestaña **Consultas de mi comisión**, y publicá una consulta.
+2. En la ventana de incógnito, ingresá como U2 y entrá a la misma pestaña. La consulta de U1 tiene que aparecer (la lista se actualiza sola cada 15 segundos).
+3. Respondé como U2.
+4. Volvé a la ventana de U1: debajo de la respuesta aparece **Me sirvió**. Al tocarlo, la consulta queda como «Resuelta».
+
+## 5. Correcciones del TP4
+
+Comprobaciones de las correcciones que el equipo aceptó en el TP4B.
+
+| N.º | Qué probar | Resultado esperado |
+|---|---|---|
+| 1 | Salí de la sesión e intentá ingresar con `prueba@gmail.com`. | Debajo del campo aparece el error «Ese correo no es de la UNLaM…», el campo se marca en rojo y la ayuda con el formato `@unlam.edu.ar` sigue visible. |
+| 2 | En Sistemas Operativos, tocá el botón de descarga de un material con advertencia en la lista. | La confirmación aparece **dentro de la misma tarjeta**, con el texto de la advertencia. Al confirmar, en esa tarjeta aparece «Descarga iniciada». |
+| 3 y 4 | Entrá a Materiales sin elegir nada. | El listado ocupa todo el ancho y no hay un panel de detalle vacío. El detalle aparece recién al tocar un material. |
+| 6 | Entrá a **Redes** (tiene una sola comisión). Después, abrí **Subir material** y elegí Redes. | La comisión y el cuatrimestre se muestran como texto fijo, sin desplegable. |
+| 6 | En Sistemas Operativos, tocá **Otros** (no tiene material). | El botón se puede tocar y aparece «No hay otros de esta cursada». |
+| 7 | En Sistemas Operativos, cambiá el cuatrimestre a **1.º 2026**. Pasá a Consultas, volvé a Materiales y recargá la página (`F5`). | En Consultas se avisa que en Materiales seguís viendo otra cursada. Al volver y al recargar, sigue elegido 1.º 2026. **Restablecer mi cursada** vuelve a 2.º 2026. |
+| 7 | Con 1.º 2026 elegido, descargá un material desde la lista. | Pide confirmación porque es de otra cursada. |
+| 9 | Abrí el detalle de cualquier material con archivo. | La fila **Archivo** muestra el tipo y el tamaño (por ejemplo, «PDF · 2 KB»). No se muestra la fecha de carga. |
+
+## 6. Panel del equipo y métricas
+
+1. Entrá a `http://localhost:3000/admin.html?clave=una-clave` (con la clave que hayas usado en `ADMIN_KEY`).
+2. Tiene que haber una fila por cada participante que ingresó, con:
+   - los minutos hasta abrir o descargar un material de su cursada (M1);
+   - las consultas con respuesta de otro estudiante y las marcadas con «Me sirvió» (M2);
+   - los accesos a material de otra cursada, las búsquedas sin resultados y los materiales subidos.
+3. **Descargar todos los eventos (CSV)** baja `eventos-unlamigos.csv`. Después de las sesiones, ese archivo se guarda como `docs/evidencia/tp5/eventos.csv`.
+
+> El panel complementa la observación, no la reemplaza: no sabe si alguien pidió ayuda o abrió WhatsApp.
+
+## 7. Probar en celular
+
+- Achicá la ventana del navegador o usá el modo de dispositivo de las herramientas de desarrollo (`F12`, después `Ctrl + Shift + M`).
+- Para probar en un celular de verdad dentro de la misma red wifi, entrá a `http://IP-DE-LA-COMPUTADORA:3000`. La IP se ve con `ip addr` en Linux o `ipconfig` en Windows.
+
+En pantallas angostas, el detalle se abre como un panel desde abajo y se cierra con la X, tocando afuera o con `Esc`.
+
+## 8. Antes de la sesión con usuarios
+
+1. Reemplazá en `src/seed/datos.json` las comisiones, los correos y los materiales de ejemplo por los reales de U1, U2 y U3. Los archivos van en `src/seed/archivos/`.
+2. Corré `npm run reset` para empezar con una base limpia. Si sólo agregaste cosas, `npm run seed` las suma sin borrar nada.
+3. Publicá el MVP en una URL a la que los participantes puedan entrar: un hosting de Node con disco persistente, o una computadora del equipo con un túnel (por ejemplo, `cloudflared tunnel --url http://localhost:3000`).
+4. Hacé el recorrido de las secciones 4 y 5 en esa URL pública antes de la primera sesión.
+
+## 9. Problemas comunes
+
+| Síntoma | Causa probable | Solución |
+|---|---|---|
+| «Failed to fetch» o «No se pudo conectar con el servidor» | El servidor no está corriendo (se cerró la terminal o se cortó con `Ctrl + C`), o la página es de otro puerto | Volvé a correr `npm start` en `src/` y abrí `http://localhost:3000`. La terminal tiene que quedar abierta mientras probás. |
+| Error al iniciar que menciona `node:sqlite` | Node es anterior a 22.13 | Actualizá Node. |
+| `EADDRINUSE` al iniciar | El puerto ya está en uso | Cortá el otro proceso o usá `PORT=3001 npm start`. |
+| «Tu sesión no es válida» | Se reinició la base con `npm run reset` | Volvé a ingresar con el correo. |
+| El panel dice «Clave de administración incorrecta» | `ADMIN_KEY` no coincide | Usá la clave que muestra la consola al iniciar. |
+| No aparecen las cursadas precargadas | El correo no está en `inscripciones_precargadas`, o se editó `datos.json` sin volver a cargarlo | Revisá el correo y corré `npm run reset`. |

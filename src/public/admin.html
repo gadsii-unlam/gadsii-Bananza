@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Panel del equipo · UNLaMigos</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+  <style>.admin table{border-collapse:collapse;width:100%;font-size:.88rem}.admin th,.admin td{padding:.6rem .8rem;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}.admin th{background:var(--surface-2);font-size:.8rem;color:var(--muted)}.admin caption{text-align:left;padding:.8rem;color:var(--muted)}</style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><span class="logo">UNLaMigos</span><span class="chip">Panel del equipo · no lo ven los participantes</span></div></header>
+  <main class="page admin">
+    <h1>Registro de uso de la prueba</h1>
+    <p class="muted" style="margin:.4rem 0 1rem">Datos que deja la herramienta. Son un insumo para las métricas del punto 1: no reemplazan la observación de la sesión ni dicen si alguien pidió ayuda.</p>
+    <p><a id="csv" class="btn primary">Descargar todos los eventos (CSV)</a> <button class="btn" type="button" id="actualizar">Actualizar</button></p>
+    <div id="tabla" class="card" style="overflow:auto;margin-top:1rem"><p>Cargando…</p></div>
+  </main>
+  <script type="module">
+    const clave = new URLSearchParams(location.search).get('clave') || '';
+    document.querySelector('#csv').href = `/api/admin/eventos.csv?clave=${encodeURIComponent(clave)}`;
+    const esc = v => String(v ?? '—').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const columnas = [
+      ['email', 'Correo'], ['nombre', 'Nombre'],
+      ['minutosHastaRecursoDeSuCursada', 'Min. hasta abrir material de su cursada'],
+      ['accesosARecursosDeOtraCursada', 'Accesos a material de otra cursada'],
+      ['busquedasSinResultados', 'Búsquedas sin resultados'],
+      ['consultasPublicadas', 'Consultas publicadas'], ['consultasConRespuestaDeOtro', 'Con respuesta de otro'],
+      ['consultasConRespuestaUtil', 'Con respuesta marcada útil'], ['respuestasAOtros', 'Respuestas a otros'],
+      ['materialesSubidos', 'Materiales subidos'], ['materialesSubidosConAdvertencia', 'Subidos con advertencia'],
+    ];
+    async function cargar() {
+      const res = await fetch(`/api/admin/resumen?clave=${encodeURIComponent(clave)}`);
+      const datos = await res.json();
+      const tabla = document.querySelector('#tabla');
+      if (!res.ok) { tabla.innerHTML = `<p>${esc(datos.error)}</p>`; return; }
+      tabla.innerHTML = `<table><caption>Generado ${esc(new Date(datos.generado).toLocaleString('es-AR'))}</caption>
+        <thead><tr>${columnas.map(([, t]) => `<th scope="col">${t}</th>`).join('')}</tr></thead>
+        <tbody>${datos.usuarios.map(u => `<tr>${columnas.map(([k]) => `<td>${esc(u[k])}</td>`).join('')}</tr>`).join('') || `<tr><td colspan="${columnas.length}">Todavía no se registró nadie.</td></tr>`}</tbody></table>`;
+    }
+    document.querySelector('#actualizar').addEventListener('click', cargar);
+    cargar();
+  </script>
+</body>
+</html>

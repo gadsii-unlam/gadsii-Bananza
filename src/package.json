@@ -1,0 +1,15 @@
+{
+  "name": "unlamigos-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MVP de UNLaMigos (TP5): materiales por materia, comisión y cuatrimestre y consultas entre estudiantes de la misma comisión.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js",
+    "reset": "node seed.js --reset"
+  }
+}

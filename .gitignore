@@ -24,3 +24,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Datos locales del MVP (base SQLite y archivos subidos)
+src/data/
