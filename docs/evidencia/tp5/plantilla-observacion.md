@@ -17,6 +17,7 @@
 | T2 Consulta a la comisión | | | | — | | | |
 | T3 Material de otra comisión | | | | — | | | |
 | T4 Uso libre | | | | — | | | |
+| T5 Subir un parcial | | | | — | | | |
 
 ## Puntos de fricción
 
