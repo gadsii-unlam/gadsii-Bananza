@@ -5,7 +5,7 @@
 - **Fecha y hora:**
 - **Lugar / modalidad:** (presencial / remota; dispositivo y navegador)
 - **Moderador:**  **Observador:**
-- **Perfil (del TP2):** etapa de la carrera, ¿cursa con grupo o contactos?
+- **Perfil (del TP2):** etapa de la carrera, ¿cursa con grupo o contactos?, ¿es usuario avanzado?
 - **Comisión simulada:**
 - **Grabación:** (enlace o archivo)
 
@@ -14,10 +14,11 @@
 | Tarea | Inicio | Fin | Min. (obs.) | Min. (panel) | ¿Completó? | ¿Pidió ayuda? (momento y frase textual) | ¿Salió de la app? |
 |---|---|---|---|---|---|---|---|
 | T1 Parcial de su comisión | | | | | | | |
-| T2 Consulta a la comisión | | | | — | | | |
-| T3 Material de otra comisión | | | | — | | | |
-| T4 Uso libre | | | | — | | | |
-| T5 Subir un parcial | | | | — | | | |
+| T2 Publicar consulta | | | | — | | | |
+| T3 Material de lectura de su cursada | | | | — | | | |
+| T4 Exploración libre | | | | — | | | |
+| T5 Identificar comisión y cuatrimestre sin abrir | | | | — | | | |
+| T6 Responder consulta de otro participante | | | | — | | | |
 
 ## Puntos de fricción
 
@@ -37,10 +38,14 @@
 2.
 3.
 4.
-5.
-6.
 
-## Seguimiento (48 h)
+## Medición de M2 durante el bloque compartido
 
-- ¿Recibió respuesta a su consulta? ¿De quién? ¿La marcó «Me sirvió»?
-- ¿Volvió a entrar? ¿Respondió a otro? ¿Subió material?
+| Consulta publicada por (U) | Respondida por (U) | ¿Misma comisión? | ¿Se conocían antes? | ¿T6 respondió esa consulta? | ¿El autor marcó «Me sirvió» antes de cerrar? |
+|---|---|---|---|---|---|
+| | | | | | |
+
+- **Momento de publicación:**
+- **Momento de respuesta:**
+- **Evento «Con respuesta marcada útil» en el panel:** sí / no
+- **Si no se marcó útil, explicación textual del autor:**

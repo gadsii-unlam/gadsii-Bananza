@@ -50,7 +50,7 @@ Un hilo de Sistemas Operativos puede desarrollarse de la siguiente manera:
 3. Quien preguntó contrasta la explicación con su resolución y utiliza «Me sirvió» si le permite avanzar.
 4. Una tercera persona agrega una variante del ejercicio o una referencia al apunte de sincronización.
 
-La secuencia permite revisar el flujo de consulta, respuesta y valoración. Para computar M2 hacen falta, además, el plazo efectivo de respuesta y la comprobación de que las personas no tenían contacto previo. El ejemplo no aporta esas mediciones.
+La secuencia permite revisar el flujo de consulta, respuesta y valoración. Para computar M2, el bloque compartido de T2 y T6 debe incluir una respuesta de otro estudiante de la misma comisión, comprobar que no había contacto previo y registrar si quien preguntó la marca como útil antes de cerrar el bloque. El ejemplo no aporta esas mediciones.
 
 ## Lectura para el informe
 
@@ -58,7 +58,7 @@ La secuencia permite revisar el flujo de consulta, respuesta y valoración. Para
 |---|---|---|
 | Usabilidad | Pasos del flujo, conservación de filtros, contexto de cursada y confirmaciones. | Tiempos, errores efectivos y pedidos de ayuda. |
 | Valor de materiales | Correspondencia entre las necesidades del TP2 y el acceso organizado por cursada. | Disponibilidad suficiente y preferencia efectiva frente a los canales actuales. |
-| Valor de consultas | Publicación, respuesta y marca de utilidad como secuencia de interacción. | Participación efectiva, ausencia de contacto previo y respuesta dentro de 48 h. |
+| Valor de consultas | Publicación en T2, respuesta en T6 y marca de utilidad como secuencia de interacción. | Participación efectiva, ausencia de contacto previo y respuesta útil durante el bloque compartido. |
 | Participación | Diferencias entre un perfil que consume y otro que ya comparte materiales. | Retorno, aportes espontáneos y continuidad del uso. |
 
 **Decisión de desarrollo propuesta:** conservar el foco en materiales por cursada y mantener Consultas como función a evaluar. Los recorridos permiten priorizar revisiones de interfaz; el resultado de M1 y M2 y la validación de la hipótesis permanecen pendientes de medición.

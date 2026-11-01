@@ -15,13 +15,13 @@ Ver [`docs/metricas.md`](metricas.md) (commit `8662d38`, anterior al primer comm
 Ratificado por el equipo el 26/10/2026.
 
 - **M1 — Búsqueda autónoma exitosa:** proporción de participantes que abren o descargan un material de su propia comisión y cuatrimestre en menos de 5 minutos desde que entran a la materia, sin pedir ayuda y sin salir a WhatsApp, Discord u otra plataforma.
-- **M2 — Consultas resueltas entre pares:** proporción de consultas que reciben, dentro de las 48 h, una respuesta de otro estudiante sin contacto previo con quien preguntó, y que quien preguntó marca como «Me sirvió».
+- **M2 — Consultas resueltas entre pares:** proporción de consultas publicadas en T2 que reciben, antes de cerrar el bloque compartido, una respuesta en T6 de otro estudiante de la misma comisión, sin contacto previo, y que quien preguntó marca como «Me sirvió».
 - **Métrica vanidosa:** cantidad de materiales disponibles y descargas totales. La carga inicial la controla el equipo, las tareas de la sesión hacen subir las descargas y no distinguen si lo descargado era de su cursada ni si le sirvió.
 
 | Resultado | Condición |
 |---|---|
-| **Se sostiene** | M1 en al menos 2 de 3 participantes, ninguno recurre a otra plataforma para completar la búsqueda, y al menos 1 consulta con respuesta útil de otro estudiante sin contacto previo en 48 h. |
-| **No se sostiene** | M1 en 1 participante o en ninguno, por motivos que no son de interfaz, o ninguna consulta con respuesta de otro estudiante en 48 h. |
+| **Se sostiene** | M1 en al menos 2 de 3 participantes, ninguno recurre a otra plataforma para completar la búsqueda, y al menos 1 consulta publicada en T2 recibe en T6 una respuesta útil de otro estudiante de la misma comisión, sin contacto previo, antes de cerrar el bloque compartido. |
+| **No se sostiene** | M1 en 1 participante o en ninguno, por motivos que no son de interfaz, o ninguna consulta recibe durante el bloque compartido una respuesta útil que cumpla las condiciones de M2. |
 | **No concluyente** | M1 falla por fricciones de interfaz observadas, pero los participantes muestran que el material les sirve. Se corrige y se repite la prueba antes de decidir. |
 
 ## Parte 2 — Construir
@@ -78,7 +78,7 @@ Exportación del registro del MVP: [`eventos.csv`](evidencia/tp5/eventos.csv).
 | ¿Genera el valor que prometía la hipótesis? | | |
 | ¿Hay evidencia de que resuelve el problema real que contaron en el TP2? | | |
 | M1 contra el criterio de éxito | __ de 3 | |
-| M2 contra el criterio de éxito | __ consultas con respuesta útil de otro en 48 h | |
+| M2 contra el criterio de éxito | __ consultas publicadas en T2 con respuesta útil en T6 durante el bloque compartido | |
 | Fila del criterio de éxito en la que cae el resultado | Se sostiene / No se sostiene / No concluyente | |
 
 [No mezclar las capas: un problema de interfaz no refuta la hipótesis y una interfaz cómoda no la confirma.]

@@ -19,16 +19,16 @@
 
 ### M2 — Consultas resueltas entre pares
 
-**Definición:** proporción de consultas publicadas en el canal de una comisión que reciben, dentro de las **48 h**, una respuesta de **otro estudiante sin contacto previo** con quien preguntó, y que quien preguntó marca como «Me sirvió».
+**Definición:** proporción de consultas publicadas en T2 que, antes de que termine el bloque de prueba, reciben una respuesta en T6 de otro participante de la misma comisión con quien quien preguntó no tenía contacto previo, y que quien preguntó marca como «Me sirvió».
 
-**Cómo se mide:** la respuesta y la marca «Me sirvió» salen del registro del MVP («Con respuesta marcada útil»). La ausencia de contacto previo se pregunta en la entrevista de cierre.
+**Cómo se mide:** se organiza un bloque compartido entre al menos dos participantes de la misma comisión: uno publica una consulta en T2 y otro responde esa misma consulta en T6. La respuesta y la marca «Me sirvió» se verifican en el registro del MVP («Con respuesta marcada útil»); al autor de la consulta se le pregunta si conocía previamente a quien respondió. La medición termina al cerrar el bloque.
 
 **Por qué es accionable:** mide la segunda mitad de la hipótesis (criterio 2 del brief): que el producto reduzca la dependencia de conocer a la persona correcta. Según el resultado:
 
 - si las consultas no reciben respuesta → el canal no genera valor por sí solo. Se decide si sostenerlo (motor de participación) o dejarlo afuera (zoom-in a materiales);
 - si reciben respuesta pero nadie la marca útil → revisar la calidad o la pertinencia del canal.
 
-> **Condición para medir M2:** con 3 participantes, tiene que haber al menos dos personas en la misma comisión. Cómo se logra (comisión común simulada, compañeros de la misma comisión real que respondan sin guion, o medición durante los 2 días posteriores a la sesión) se define al preparar la sesión (punto 3), sin cambiar la métrica ni el umbral.
+> **Condición para medir M2:** al menos dos participantes deben compartir una comisión real o simulada y participar del mismo bloque de prueba. T6 debe responder una consulta publicada por otra persona en T2; esa respuesta no se guiona, ambas personas no deben tener contacto previo y quien preguntó debe poder marcar «Me sirvió» antes de cerrar el bloque.
 
 ### Observaciones complementarias (no son métricas de decisión)
 
@@ -51,8 +51,8 @@ Podría duplicarse sin que la hipótesis esté más cerca de confirmarse. Lo mis
 
 | Resultado | Condición |
 |---|---|
-| **La hipótesis se sostiene** | M1: al menos **2 de 3** participantes la cumplen, **y** ninguno recurre a WhatsApp u otra plataforma para completar la búsqueda, **y** M2: al menos **1** consulta recibe, en 48 h, una respuesta útil de otro estudiante con quien no tenía contacto. |
-| **La hipótesis no se sostiene** | M1: **1 o ningún** participante la cumple, por motivos que no se resuelven con un ajuste de interfaz (lo encontró, pero dice que no le sirve o que lo seguiría pidiendo por WhatsApp), **o** M2: **ninguna** consulta recibe respuesta de otro estudiante en 48 h. |
+| **La hipótesis se sostiene** | M1: al menos **2 de 3** participantes la cumplen, **y** ninguno recurre a WhatsApp u otra plataforma para completar la búsqueda, **y** M2: al menos **1** consulta recibe, antes de terminar la sesión, una respuesta útil de otro estudiante de la misma comisión con quien quien preguntó no tenía contacto previo. |
+| **La hipótesis no se sostiene** | M1: **1 o ningún** participante la cumple, por motivos que no se resuelven con un ajuste de interfaz (lo encontró, pero dice que no le sirve o que lo seguiría pidiendo por WhatsApp), **o** M2: **ninguna** consulta recibe durante la sesión una respuesta útil que cumpla las condiciones de la métrica. |
 | **Resultado no concluyente** | M1 falla por fricciones de interfaz observadas (no encontró un filtro, no entendió la tabla), pero los participantes dicen y demuestran que el material les sirve. Se corrige la usabilidad y se repite la prueba **antes** de decidir pivotar. |
 
 Cualquier conclusión del informe se contrasta contra esta tabla. Si algo de lo observado no entra en ninguna fila, se informa como hallazgo y no se ajusta el criterio después de ver los resultados.
