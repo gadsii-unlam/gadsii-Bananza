@@ -5,15 +5,13 @@
 - **Fecha:** 3/11/2026
 - **Observador:** antonio
 - **Comisión:** 2300
-- **Video(s):** -
-
 ## Tareas
 
 ### T1 — Parcial de su comisión
 
 - **¿Completó?:** Sí
 - **Tiempo (observador / panel):** 00:43
-- **Observaciones:** encontró todo con suma facilidad y sin dudas.
+- **Observaciones:** encontró todo con suma facilidad y sin dudas. No pidió ayuda ni reportó haber salido a otra plataforma durante T1.
 
 ### T2 — Publicar consulta
 
@@ -24,7 +22,7 @@
 ### T3 — Material de lectura de su cursada
 
 - **¿Completó?:** Sí
-- **Tiempo (observador / panel):** —
+- **Tiempo (observador / panel):** 00:25
 - **Observaciones:** —
 
 ### T4 — Exploración libre
@@ -42,7 +40,7 @@
 ### T6 — Responder consulta de otro participante
 
 - **¿Respondió la consulta de T2?:** Sí
-- **Tiempo observado:** 10 minutos
+- **Tiempo observado:** No registrado; los 10 minutos corresponden a la respuesta que recibió a su consulta de T2.
 - **Observaciones:** ninguna
 
 ## M2 — Intercambio entre participantes
@@ -52,6 +50,7 @@
 - **¿Misma comisión?:** Sí
 - **¿Se conocían antes?:** No
 - **¿Marcó «Me sirvió» antes de cerrar?:** Sí
+- **Tiempo hasta la respuesta de U3:** 10 minutos
 - **Comentario sobre la utilidad:** si le sirvio
 ## Respuestas de cierre
 

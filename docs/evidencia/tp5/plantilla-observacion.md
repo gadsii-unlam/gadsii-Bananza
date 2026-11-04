@@ -1,51 +1,61 @@
-# Hoja de observación — U[n]
+# Observación de sesión — U[n]
 
-> Copiar como `U1.md`, `U2.md` y `U3.md`. Se completa **durante** la sesión con lo que pasó, no con lo que se interpreta. La interpretación va en el informe.
+> Copiar como `U1.md`, `U2.md` o `U3.md`. En «Observaciones» anotar brevemente dudas, errores, pedidos de ayuda o acciones inesperadas.
 
-- **Fecha y hora:**
-- **Lugar / modalidad:** (presencial / remota; dispositivo y navegador)
-- **Moderador:**  **Observador:**
-- **Perfil (del TP2):** etapa de la carrera, ¿cursa con grupo o contactos?, ¿es usuario avanzado?
-- **Comisión simulada:**
-- **Grabación:** (enlace o archivo)
+## Datos
+
+- **Fecha:**
+- **Observador:**
+- **Comisión:**
 
 ## Tareas
 
-| Tarea | Inicio | Fin | Min. (obs.) | Min. (panel) | ¿Completó? | ¿Pidió ayuda? (momento y frase textual) | ¿Salió de la app? |
-|---|---|---|---|---|---|---|---|
-| T1 Parcial de su comisión | | | | | | | |
-| T2 Publicar consulta | | | | — | | | |
-| T3 Material de lectura de su cursada | | | | — | | | |
-| T4 Exploración libre | | | | — | | | |
-| T5 Identificar comisión y cuatrimestre sin abrir | | | | — | | | |
-| T6 Responder consulta de otro participante | | | | — | | | |
+### T1 — Parcial de su comisión
 
-## Puntos de fricción
+- **¿Completó?:**
+- **Tiempo (observador / panel):**
+- **Observaciones:**
 
-| # | Tarea | Momento (mm:ss de la grabación) | Qué hizo | Qué dijo | Severidad (1–4) |
-|---|---|---|---|---|---|
-| 1 | | | | | |
+### T2 — Publicar consulta
 
-## Dice ≠ hace
+- **¿Completó?:**
+- **Tiempo observado:**
+- **Observaciones:**
 
-| Lo que dijo | Lo que hizo |
-|---|---|
-| | |
+### T3 — Material de lectura de su cursada
 
-## Respuestas de cierre (textuales)
+- **¿Completó?:**
+- **Tiempo observado:**
+- **Observaciones:**
 
-1.
-2.
-3.
-4.
+### T4 — Exploración libre (hasta 5 minutos)
 
-## Medición de M2 durante el bloque compartido
+- **¿Aportó material espontáneamente?:**
+- **Tiempo explorado:**
+- **Observaciones:**
 
-| Consulta publicada por (U) | Respondida por (U) | ¿Misma comisión? | ¿Se conocían antes? | ¿T6 respondió esa consulta? | ¿El autor marcó «Me sirvió» antes de cerrar? |
-|---|---|---|---|---|---|
-| | | | | | |
+### T5 — Identificar comisión y cuatrimestre sin abrir
 
-- **Momento de publicación:**
-- **Momento de respuesta:**
-- **Evento «Con respuesta marcada útil» en el panel:** sí / no
-- **Si no se marcó útil, explicación textual del autor:**
+- **¿Eligió el material correcto?:**
+- **¿Lo identificó antes de abrir?:**
+- **Observaciones:**
+
+### T6 — Responder una consulta
+
+- **¿Respondió una consulta?:**
+- **Tiempo observado:**
+- **Observaciones:**
+
+## M2 — Intercambio entre participantes (completar una sola vez si aplica)
+
+- **Consulta publicada por (U):**
+- **Respondida por (U):**
+- **¿Misma comisión y sin contacto previo?:**
+- **¿El autor marcó «Me sirvió» durante el bloque?:**
+
+## Respuestas de cierre
+
+1. «Contame cómo fue buscar el parcial, de principio a fin.»
+2. «¿Hubo algún momento en que no supiste qué hacer? ¿Qué pensaste ahí?»
+3. «Si mañana necesitás otro material, ¿por dónde empezarías?»
+4. «¿Hay algo que hayas querido hacer y no pudiste?»
