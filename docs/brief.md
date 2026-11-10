@@ -1,6 +1,8 @@
-# Brief de Producto — Versión 4
+# Brief de Producto — Versión 5
 
-**Cambios respecto de la versión 3.** El 3/11/2026 se probó el MVP con tres estudiantes de la comisión 2300 (simulada). Contra el criterio de éxito escrito antes de la prueba, la hipótesis se sostiene: M1 dio 3 de 3 contra un umbral de 2, nadie salió a otra plataforma y una consulta recibió una respuesta útil de un par de la misma comisión al que no conocía. La decisión es perseverar. Lo que quedó probado, igual, es más chico que la hipótesis: el producto cumple cuando hay material de la cursada cargado y alguien de la comisión responde, y esas dos condiciones las garantizó el equipo. Por eso la versión 4 pone en el centro el supuesto que quedó sin probar, que el material lo suban los propios estudiantes; incorpora las correcciones de interfaz que surgieron en la sesión; vuelve a evaluar las notificaciones, y agrega al plan de prueba los datos que faltaron. Se mantienen el segmento, el usuario primario, el contexto de uso y los atributos de usabilidad de la versión 3.
+**Cambios respecto de la versión 4.** El brief incorpora la arquitectura del producto (TP6). Describe la arquitectura real del MVP: un único proceso Node.js con SQLite y los archivos en el mismo disco, con la identidad y las cursadas simuladas. También ubica ese MVP dentro de la arquitectura de la visión del TP1. El salto principal es pasar de una identidad simulada a un acceso verificado contra la UNLaM. Se suman las restricciones técnicas del contexto: interfaces institucionales que todavía no se confirmaron, mantenimiento a cargo de un equipo de estudiantes y uso desde computadoras de escritorio. Como riesgo técnico se registran la subida y el almacenamiento de archivos, que es el componente del que depende el piloto de la v4. Además se corrige un dato de la v4: al revisar la grabación de U1 en T4 se vio que el archivo rechazado no fue un Excel sino un `.sf2`, y que el Excel nunca llegó a enviarse. El segmento, el usuario primario, la hipótesis v4 y la decisión de perseverar no cambian. El detalle está en `docs/arquitectura/tp6-arquitectura.md`.
+
+**Cambios de la versión 4 respecto de la versión 3.** El 3/11/2026 se probó el MVP con tres estudiantes de la comisión 2300 (simulada). Contra el criterio de éxito escrito antes de la prueba, la hipótesis se sostiene: M1 dio 3 de 3 contra un umbral de 2, nadie salió a otra plataforma y una consulta recibió una respuesta útil de un par de la misma comisión al que no conocía. La decisión es perseverar. Lo que quedó probado, igual, es más chico que la hipótesis: el producto cumple cuando hay material de la cursada cargado y alguien de la comisión responde, y esas dos condiciones las garantizó el equipo. Por eso la versión 4 pone en el centro el supuesto que quedó sin probar, que el material lo suban los propios estudiantes; incorpora las correcciones de interfaz que surgieron en la sesión; vuelve a evaluar las notificaciones, y agrega al plan de prueba los datos que faltaron. Se mantienen el segmento, el usuario primario, el contexto de uso y los atributos de usabilidad de la versión 3.
 
 ## Segmento elegido
 
@@ -69,7 +71,7 @@ Sesiones del 3/11/2026 con U1, U2 y U3, comisión 2300 simulada. Evidencia en `d
 |---|---|---|
 | 1. Encuentra solo un recurso de su comisión en menos de 5 minutos | Los tres en T1, entre 0:43 y 1:52, sin pedir ayuda | Cumplido en la sesión. Falta cruzarlo con el registro del MVP (`eventos.csv` todavía no está exportado) |
 | 2. Respuesta útil de un par de la comisión sin contacto previo | U3 respondió la consulta de U2 a los 10 minutos y U2 la marcó «Me sirvió». De las consultas de U1 y U3 no quedó registro del intercambio | Cumplido en el mínimo (1 consulta). La respuesta la pedía la consigna de T6 |
-| 3. Un usuario sube material propio sin que se lo pidan | Las fichas marcan aporte en U1 y U3, pero a U1 se le rechazó un Excel y la ficha de U3 no dice qué subió | Señal favorable, no confirmada |
+| 3. Un usuario sube material propio sin que se lo pidan | Las fichas marcan aporte en U1 y U3. Lo que subió U1 fue un archivo de prueba: título «AAAA…» y su propia advertencia, «No tiene mucho que ver con la materia» (`t4.mkv`). La ficha de U3 no dice qué subió | Señal débil, no confirmada |
 | 4. Identifica comisión y cuatrimestre sin abrir el material | Los tres en T5 | Cumplido |
 | 5. Nadie recurre a WhatsApp | Según el observador, nadie salió de la plataforma | Cumplido en la sesión |
 
@@ -82,7 +84,7 @@ Los tres completaron las seis tareas. Se cumplieron la eficiencia y la facilidad
 1. La tarjeta de la materia no responde al clic; sólo funcionan los botones «Materiales» y «Consultas» (U3).
 2. Al entrar a otra materia, el participante creyó que se había equivocado de comisión: la materia actual no se distingue bien de la comisión (U1, T1).
 3. Las etiquetas de «Subir material» son de texto libre y el participante pidió elegirlas de una lista (U1, T4).
-4. La subida de un Excel fue rechazada, aunque el servidor acepta .xls y .xlsx; la causa no está identificada (U1).
+4. U1 contó en el cierre que no pudo subir un Excel. La grabación (`U1-sesion/t4.mkv`, ~1:10) muestra otra cosa: el servidor rechazó un `.sf2`, que no es un formato admitido; después eligió un `.xls`, lo cambió por un `.txt` antes de publicar y publicó sin problemas. El rechazo fue correcto, pero el participante salió con la idea de que la plataforma no lo dejaba. *(Corregido en la v5: la v4 lo registraba como un rechazo del Excel sin causa identificada.)*
 
 ### Decisión: perseverar
 
@@ -121,7 +123,7 @@ El MVP incluye únicamente lo necesario para poner a prueba la hipótesis de val
 
 | Cambio | Origen |
 |---|---|
-| Corregir la carga: encontrar por qué se rechazó el Excel de U1 y pasar las etiquetas a una lista cerrada | U1 en T4 y en la pregunta de cierre 4 |
+| Corregir la carga: que el mensaje de formato no admitido diga qué formatos sí se aceptan y se vea junto al archivo, y pasar las etiquetas a una lista cerrada | U1 en T4 y en la pregunta de cierre 4 |
 | Hacer que la tarjeta de la materia lleve a sus contenidos | U3 en la pregunta de cierre 2 |
 | Distinguir mejor la materia actual de la comisión | U1 en T1 |
 | Piloto de varias semanas con una comisión real, sin material precargado | Es el supuesto que quedó sin probar |
@@ -238,7 +240,7 @@ La satisfacción se consultará al finalizar las tareas y no reemplazará la obs
 ## Supuestos pendientes y límites de validación
 
 * **Prioridad de escritorio:** respaldada por los tres casos relevados; requiere una muestra mayor para generalizarla.
-* **Aporte sostenido:** que los estudiantes suban material sin que el equipo lo cargue. Es el supuesto más riesgoso: U3 dijo que «todo depende de la cantidad de contenido de la plataforma». En el TP5, U1 y U3 intentaron subir material en T4 sin que se les pidiera.
+* **Aporte sostenido:** que los estudiantes suban material sin que el equipo lo cargue. Es el supuesto más riesgoso: U3 dijo que «todo depende de la cantidad de contenido de la plataforma». En el TP5, U1 y U3 subieron material en T4 sin que se les pidiera, aunque lo de U1 fue un archivo de prueba.
 * **Respuesta sin consigna:** que alguien responda una consulta en una semana cualquiera, sin aviso y sin estar en una prueba.
 * **Perfil de los participantes:** en la próxima prueba se registra si cada participante cursa con grupo o sin contactos, y se pregunta si usaría la plataforma en lugar de WhatsApp, MIeL o Discord.
 * **Contexto y advertencias como incentivo para aportar:** se observará si los participantes publican materiales aprovechando estos campos.
@@ -246,3 +248,41 @@ La satisfacción se consultará al finalizar las tareas y no reemplazará la obs
 * **Notificaciones y recurrencia:** en el TP5 la respuesta entre pares llegó porque los dos participantes estaban en el mismo bloque. Fuera de la sesión nada avisa a quien preguntó ni a quien podría responder; se evalúan después del piloto.
 * **Acceso verificado:** la simulación permite probar las tareas, pero no demuestra que el producto pueda controlar el acceso de personas externas.
 * **Adopción sostenida:** completar las tareas en una prueba inicial no demuestra que los estudiantes continúen utilizando la plataforma a lo largo del cuatrimestre.
+
+## Arquitectura: del MVP a la visión
+
+**Hoy (MVP).** Es una aplicación web de dos capas: un cliente HTML/JS sin framework y un único proceso Node.js. Ese proceso sirve la interfaz y una API JSON, y guarda todo en una base SQLite y en una carpeta de archivos del mismo disco. La regularidad, la inscripción, el material inicial y los canales los carga el equipo a mano (`seed/datos.json`). El diagrama y los componentes están en `docs/arquitectura/tp6-arquitectura.md`, punto 1.
+
+**Visión.** El producto completo agrega:
+* identidad verificada;
+* sincronización de cursadas con el sistema académico;
+* reseñas de comisiones;
+* búsqueda de texto completo;
+* moderación;
+* notificaciones.
+
+También mueve los datos a una base persistente con respaldo y los archivos a un almacenamiento de objetos. El MVP ya cubre cursadas, materiales, consultas por comisión y métricas de uso, aunque con datos precargados.
+
+**Salto principal.** Pasar de una identidad y unas cursadas simuladas a un acceso verificado contra la UNLaM. El valor del producto depende de que «tu comisión» sea un dato cierto, y esta pieza no depende sólo del equipo.
+
+**Primer paso.** El piloto de la v4 se puede hacer con la identidad todavía simulada, pero no con los aportes guardados en el disco de una sola máquina. Lo primero que cambia de la arquitectura es el almacenamiento de archivos.
+
+**Tecnologías que agregaría la visión:**
+* inicio de sesión federado contra el proveedor del correo institucional o, si no existe, verificación por enlace al correo;
+* PostgreSQL administrado;
+* almacenamiento de objetos compatible con S3.
+
+Node.js se mantiene por familiaridad del equipo.
+
+## Restricciones técnicas del contexto
+
+* **Integración institucional sin confirmar.** No hay evidencia de que la UNLaM permita aplicaciones externas ni de que exponga interfaces para verificar alumnos y materias (supuestos 7 y 8). Hasta tenerla, la identidad se apoya en el correo institucional y la comisión la declara el estudiante.
+* **Mantenimiento.** Lo sostiene un equipo de estudiantes que rota. Por eso se prefieren servicios administrados con respaldo automático antes que infraestructura propia o la máquina de un integrante.
+* **Contexto de uso.** Se usa sobre todo desde una computadora, en casa y con conexión (TP2). Eso sostiene una aplicación web, sin uso sin conexión ni aplicación nativa.
+* **Archivos de los estudiantes.** El material lo aportan los usuarios y no se puede reconstruir. Antes de abrir el acceso fuera de la prueba, el almacenamiento necesita copia de respaldo y control de contenido.
+
+## Riesgo técnico principal
+
+La subida y el almacenamiento de archivos. Es el componente del que depende el piloto: si subir falla o confunde, el contenido no crece. En la prueba del TP5 fue lo único que dio un error. El rechazo del `.sf2` de U1 era correcto, pero U1 salió convencido de que no podía subir un Excel. Además, lo único que subió U1 fue un archivo de prueba, y quedó publicado sin ningún control.
+
+Hoy los archivos viajan en base64 dentro del pedido, se cargan enteros en la memoria del único proceso y se guardan sin copia en el disco del servidor. La justificación está en `docs/arquitectura/tp6-arquitectura.md`, punto 5.
