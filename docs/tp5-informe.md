@@ -94,7 +94,7 @@ Exportación del registro del MVP: [`eventos.csv`](evidencia/tp5/eventos.csv).
 
 ### 7. Brief de producto — versión 4
 
-`docs/brief.md` → versión 4, que abre con el párrafo de cambios respecto de la v3. Incorpora lo aprendido, el estado de la hipótesis y la decisión con su fundamento. [Se actualiza una vez cerrado el punto 6.]
+Ver [`docs/brief.md`](brief.md), versión 4. Abre con el párrafo de cambios respecto de la v3 e incorpora el resultado de la prueba, el estado de la hipótesis, la decisión de perseverar con su fundamento, la hipótesis v4 y los cambios de alcance.
 
 ## Parte 5 — Fundamentación
 
