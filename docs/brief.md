@@ -1,6 +1,6 @@
-# Brief de Producto — Versión 3
+# Brief de Producto — Versión 4
 
-Respecto de la versión 2, se delimitó el alcance del MVP para validar la búsqueda de materiales y el intercambio entre estudiantes de una misma cursada sin depender de contactos previos. Se definió qué funcionalidades se construyen y qué aspectos se simulan o resuelven manualmente, se estableció el flujo principal de búsqueda y se priorizaron eficiencia, facilidad de aprendizaje y baja tasa de errores. Las reseñas, las notificaciones y la integración real con los sistemas de la UNLaM quedan fuera de esta primera versión. Se mantienen el segmento, el usuario primario y los hallazgos del TP2 como fundamento de estas decisiones.
+**Cambios respecto de la versión 3.** El 3/11/2026 se probó el MVP con tres estudiantes de la comisión 2300 (simulada). Contra el criterio de éxito escrito antes de la prueba, la hipótesis se sostiene: M1 dio 3 de 3 contra un umbral de 2, nadie salió a otra plataforma y una consulta recibió una respuesta útil de un par de la misma comisión al que no conocía. La decisión es perseverar. Lo que quedó probado, igual, es más chico que la hipótesis: el producto cumple cuando hay material de la cursada cargado y alguien de la comisión responde, y esas dos condiciones las garantizó el equipo. Por eso la versión 4 pone en el centro el supuesto que quedó sin probar, que el material lo suban los propios estudiantes; incorpora las correcciones de interfaz que surgieron en la sesión; vuelve a evaluar las notificaciones, y agrega al plan de prueba los datos que faltaron. Se mantienen el segmento, el usuario primario, el contexto de uso y los atributos de usabilidad de la versión 3.
 
 ## Segmento elegido
 
@@ -59,13 +59,53 @@ Las búsquedas se realizan principalmente desde una **computadora**, en el hogar
 
 Por ello, el MVP prioriza una experiencia web de escritorio que pueda utilizarse junto con otras herramientas de estudio. El relevamiento no aporta evidencia suficiente para priorizar una aplicación móvil ni el uso sin conexión.
 
-## Hipótesis de valor del MVP
+## Resultado de la prueba del MVP (TP5)
+
+Sesiones del 3/11/2026 con U1, U2 y U3, comisión 2300 simulada. Evidencia en `docs/evidencia/tp5/`; análisis completo en `docs/tp5-informe.md`, puntos 5 y 6.
+
+### Estado de la hipótesis de la versión 3
+
+| Criterio de la v3 | Resultado | Estado |
+|---|---|---|
+| 1. Encuentra solo un recurso de su comisión en menos de 5 minutos | Los tres en T1, entre 0:43 y 1:52, sin pedir ayuda | Cumplido en la sesión. Falta cruzarlo con el registro del MVP (`eventos.csv` todavía no está exportado) |
+| 2. Respuesta útil de un par de la comisión sin contacto previo | U3 respondió la consulta de U2 a los 10 minutos y U2 la marcó «Me sirvió». De las consultas de U1 y U3 no quedó registro del intercambio | Cumplido en el mínimo (1 consulta). La respuesta la pedía la consigna de T6 |
+| 3. Un usuario sube material propio sin que se lo pidan | Las fichas marcan aporte en U1 y U3, pero a U1 se le rechazó un Excel y la ficha de U3 no dice qué subió | Señal favorable, no confirmada |
+| 4. Identifica comisión y cuatrimestre sin abrir el material | Los tres en T5 | Cumplido |
+| 5. Nadie recurre a WhatsApp | Según el observador, nadie salió de la plataforma | Cumplido en la sesión |
+
+**Lectura:** la hipótesis se sostiene dentro de la sesión, pero no se sabe si se sostiene en uso real. El material lo cargó el equipo, la respuesta entre pares salió de una consigna y las fichas no registran si los participantes cursan sin grupos ni contactos, que es el perfil del usuario primario.
+
+### Usabilidad
+
+Los tres completaron las seis tareas. Se cumplieron la eficiencia y la facilidad de aprendizaje: tiempos cortos y ningún pedido de ayuda. Los problemas anticipados en el TP4 que la sesión llegó a probar no volvieron a aparecer. Aparecieron cuatro hallazgos nuevos y ninguno impidió terminar una tarea:
+
+1. La tarjeta de la materia no responde al clic; sólo funcionan los botones «Materiales» y «Consultas» (U3).
+2. Al entrar a otra materia, el participante creyó que se había equivocado de comisión: la materia actual no se distingue bien de la comisión (U1, T1).
+3. Las etiquetas de «Subir material» son de texto libre y el participante pidió elegirlas de una lista (U1, T4).
+4. La subida de un Excel fue rechazada, aunque el servidor acepta .xls y .xlsx; la causa no está identificada (U1).
+
+### Decisión: perseverar
+
+El resultado cae en la fila «Se sostiene» del criterio de éxito. No es «No concluyente», porque M1 no falló, y los hallazgos nuevos son de interfaz.
+
+## Hipótesis de valor — versión 4
 
 **Creemos que** un estudiante de Ingeniería en Informática de la UNLaM que cursa sin grupos ni contactos tiene dificultades para conseguir materiales y resolver consultas porque la información está dispersa y su acceso depende de conocer los canales o las personas adecuadas.
 
-**Nuestra solución es** UNLaMigos, un espacio que lo vincula con materiales y estudiantes por materia, comisión y cuatrimestre, permite reconocer el contexto de los recursos y ofrece un canal de consultas entre pares.
+**Nuestra solución es** UNLaMigos, un espacio donde **los mismos estudiantes suben el material con su contexto**, organizado por materia, comisión y cuatrimestre, y donde pueden consultar a sus pares, de modo que cualquiera de la comisión lo consiga sin depender de nadie.
 
-**Sabremos que estamos en lo correcto cuando, durante la prueba del MVP:**
+**Sabremos que estamos en lo correcto cuando, en un piloto de varias semanas con una comisión real y sin material precargado:**
+
+1. Estudiantes de la comisión suban material propio con su contexto, sin que el equipo lo cargue.
+2. Las búsquedas encuentren material que subió otro estudiante.
+3. Las consultas reciban respuesta útil de un par sin que ninguna consigna lo pida.
+4. Los participantes digan que lo usarían en lugar de WhatsApp, MIeL o Discord.
+
+La métrica vanidosa (cantidad de materiales y descargas totales) no sirve para medir esto.
+
+**Qué nos haría pivotar:** si en el piloto las consultas no reciben respuesta cuando nadie lo pide, corresponde un zoom-in a materiales y el canal de consultas queda fuera.
+
+### Criterios de la versión 3 (referencia)
 
 1. Un estudiante que no participa de los grupos de una materia encuentre por sí solo un recurso de una comisión determinada en menos de cinco minutos.
 2. Un estudiante obtenga una respuesta útil de otro estudiante de su comisión con quien no tenía contacto previo.
@@ -76,6 +116,18 @@ Por ello, el MVP prioriza una experiencia web de escritorio que pueda utilizarse
 ## Alcance del MVP
 
 El MVP incluye únicamente lo necesario para poner a prueba la hipótesis de valor.
+
+### Cambios de alcance en la versión 4
+
+| Cambio | Origen |
+|---|---|
+| Corregir la carga: encontrar por qué se rechazó el Excel de U1 y pasar las etiquetas a una lista cerrada | U1 en T4 y en la pregunta de cierre 4 |
+| Hacer que la tarjeta de la materia lleve a sus contenidos | U3 en la pregunta de cierre 2 |
+| Distinguir mejor la materia actual de la comisión | U1 en T1 |
+| Piloto de varias semanas con una comisión real, sin material precargado | Es el supuesto que quedó sin probar |
+| Notificaciones de consultas y respuestas: pasan a evaluarse en la iteración siguiente al piloto | M2 dependió de que U2 y U3 estuvieran en el mismo bloque de prueba |
+
+### Alcance vigente
 
 | Incluido                                                                                            | Propósito                                                              |
 | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -93,7 +145,7 @@ El MVP incluye únicamente lo necesario para poner a prueba la hipótesis de val
 | Integración real con los sistemas de la UNLaM | No es necesaria para esta prueba, ya que no se prueba la integración.    |
 | Reseñas de materias y comisiones              | Ningún criterio de validación de esta primera prueba las mide.           |
 | Búsqueda de compañeros de grupo               | El relevamiento no la sostuvo como problema prioritario.                 |
-| Notificaciones                                | Se posterga su evaluación hasta después de validar las tareas centrales. |
+| Notificaciones                                | Las tareas centrales se validaron; se evalúan después del piloto (ver cambios de alcance). |
 | Aplicación móvil                              | La evidencia disponible sostiene la prioridad de escritorio.             |
 | Uso sin conexión                              | No es necesario para el contexto relevado ni para probar la hipótesis.   |
 
@@ -105,7 +157,7 @@ El MVP incluye únicamente lo necesario para poner a prueba la hipótesis de val
 | Filtros por comisión y cuatrimestre | Filtrado funcional de los recursos según la cursada seleccionada.                                               | No se simula su funcionamiento.                                                                                                                    |
 | Tipos de material                   | Clasificación, etiquetas y navegación por tipo de recurso.                                                      | No se simula su funcionamiento.                                                                                                                    |
 | Consulta de recursos                | Listado con contexto visible, detalle y acceso al material.                                                     | El equipo prepara previamente los recursos iniciales.                                                                                              |
-| Carga de material                   | Formulario funcional con materia, comisión, cuatrimestre, tipo de material y campos de contexto o advertencias. | El equipo realiza la carga inicial antes de la prueba. Los aportes de los participantes se registran por separado para evaluar el criterio 3.      |
+| Carga de material                   | Formulario funcional con materia, comisión, cuatrimestre, tipo de material, etiquetas de una lista cerrada y campos de contexto o advertencias. | En la prueba del TP5 el equipo cargó el material inicial. En el piloto de la v4 no hay carga inicial: el material lo suben los estudiantes. |
 | Canal de consultas                  | Publicación y respuesta de mensajes entre usuarios.                                                             | Los canales por comisión se crean manualmente. Las respuestas que validan la hipótesis deben provenir de otro estudiante de la comisión.           |
 
 El registro con correo institucional no se considera evidencia suficiente de regularidad ni de inscripción. La prueba evalúa la experiencia con cursadas simuladas, no la eficacia de la verificación institucional.
@@ -179,15 +231,18 @@ La satisfacción se consultará al finalizar las tareas y no reemplazará la obs
 |   3 | Existe frustración al buscar compañeros de cursada.                                  | Refutado en 2 de 3 entrevistas. Se excluye del MVP.                                                                       |
 |   4 | Los estudiantes evitan plataformas oficiales por miedo a la exposición.              | Confirmado con matices en 2 de 3 entrevistas; la exposición se relaciona con los docentes.                                |
 |   5 | Los estudiantes avanzados aportan materiales y reseñas sin compensación.             | Confirmado en el único perfil avanzado entrevistado. El MVP evaluará aportes de material; las reseñas quedan fuera.       |
-|   6 | Los estudiantes adoptarían una aplicación centralizada.                              | Confirmado declarativamente en 3 de 3 entrevistas. Pendiente de validación mediante uso.                                  |
+|   6 | Los estudiantes adoptarían una aplicación centralizada.                              | Confirmado declarativamente en 3 de 3 entrevistas. En el TP5 los tres completaron las tareas, pero nadie dijo que lo usaría en lugar de sus canales (no se preguntó). Sigue pendiente. |
 |   7 | La Universidad permite aplicaciones externas públicamente relacionadas con la UNLaM. | Sin evidencia. Requiere consulta institucional.                                                                           |
 |   8 | La Universidad dispone de interfaces para verificar alumnos y materias.              | Sin evidencia. Requiere consulta técnica.                                                                                 |
 
 ## Supuestos pendientes y límites de validación
 
 * **Prioridad de escritorio:** respaldada por los tres casos relevados; requiere una muestra mayor para generalizarla.
+* **Aporte sostenido:** que los estudiantes suban material sin que el equipo lo cargue. Es el supuesto más riesgoso: U3 dijo que «todo depende de la cantidad de contenido de la plataforma». En el TP5, U1 y U3 intentaron subir material en T4 sin que se les pidiera.
+* **Respuesta sin consigna:** que alguien responda una consulta en una semana cualquiera, sin aviso y sin estar en una prueba.
+* **Perfil de los participantes:** en la próxima prueba se registra si cada participante cursa con grupo o sin contactos, y se pregunta si usaría la plataforma en lugar de WhatsApp, MIeL o Discord.
 * **Contexto y advertencias como incentivo para aportar:** se observará si los participantes publican materiales aprovechando estos campos.
 * **Organización como diferencial:** el MVP debe demostrar que permite recuperar contenido con menos esfuerzo que los canales actuales.
-* **Notificaciones y recurrencia:** su impacto no se valida en esta versión porque las notificaciones quedan fuera del alcance.
+* **Notificaciones y recurrencia:** en el TP5 la respuesta entre pares llegó porque los dos participantes estaban en el mismo bloque. Fuera de la sesión nada avisa a quien preguntó ni a quien podría responder; se evalúan después del piloto.
 * **Acceso verificado:** la simulación permite probar las tareas, pero no demuestra que el producto pueda controlar el acceso de personas externas.
 * **Adopción sostenida:** completar las tareas en una prueba inicial no demuestra que los estudiantes continúen utilizando la plataforma a lo largo del cuatrimestre.
