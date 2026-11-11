@@ -1,6 +1,6 @@
 # Brief de Producto — Versión 4
 
-**Cambios respecto de la versión 3.** El 3/11/2026 se probó el MVP con tres estudiantes de la comisión 2300 (simulada). Contra el criterio de éxito escrito antes de la prueba, la hipótesis se sostiene: M1 dio 3 de 3 contra un umbral de 2, nadie salió a otra plataforma y una consulta recibió una respuesta útil de un par de la misma comisión al que no conocía. La decisión es perseverar. Lo que quedó probado, igual, es más chico que la hipótesis: el producto cumple cuando hay material de la cursada cargado y alguien de la comisión responde, y esas dos condiciones las garantizó el equipo. Por eso la versión 4 pone en el centro el supuesto que quedó sin probar, que el material lo suban los propios estudiantes; incorpora las correcciones de interfaz que surgieron en la sesión; vuelve a evaluar las notificaciones, y agrega al plan de prueba los datos que faltaron. Se mantienen el segmento, el usuario primario, el contexto de uso y los atributos de usabilidad de la versión 3.
+**Cambios respecto de la versión 3.** El 3/11/2026 se probó el MVP con tres estudiantes de la comisión 2300 (simulada). Contra el criterio de éxito escrito antes de la prueba, la hipótesis se sostiene: M1 dio 3 de 3 en las fichas de observación contra un umbral de 2, nadie salió a otra plataforma y una consulta recibió una respuesta útil de un par de la misma comisión al que no conocía. El registro del MVP no se exportó, por lo que ese 3 de 3 no está cruzado con el panel. La decisión es perseverar. Lo que quedó probado, igual, es más chico que la hipótesis: el producto cumple cuando hay material de la cursada cargado y alguien de la comisión responde, y esas dos condiciones las garantizó el equipo. Por eso la versión 4 pone en el centro el supuesto que quedó sin probar, que el material lo suban los propios estudiantes; incorpora las correcciones de interfaz que surgieron en la sesión; vuelve a evaluar las notificaciones, y agrega al plan de prueba los datos que faltaron. Se mantienen el segmento, el usuario primario, el contexto de uso y los atributos de usabilidad de la versión 3.
 
 ## Segmento elegido
 
@@ -61,13 +61,13 @@ Por ello, el MVP prioriza una experiencia web de escritorio que pueda utilizarse
 
 ## Resultado de la prueba del MVP (TP5)
 
-Sesiones del 3/11/2026 con U1, U2 y U3, comisión 2300 simulada. Evidencia en `docs/evidencia/tp5/`; análisis completo en `docs/tp5-informe.md`, puntos 5 y 6.
+Sesiones del 3/11/2026 con U1, U2 y U3 —los mismos usuarios entrevistados en el TP2—, comisión 2300 simulada. Evidencia en `docs/evidencia/tp5/`.
 
 ### Estado de la hipótesis de la versión 3
 
 | Criterio de la v3 | Resultado | Estado |
 |---|---|---|
-| 1. Encuentra solo un recurso de su comisión en menos de 5 minutos | Los tres en T1, entre 0:43 y 1:52, sin pedir ayuda | Cumplido en la sesión. Falta cruzarlo con el registro del MVP (`eventos.csv` todavía no está exportado) |
+| 1. Encuentra solo un recurso de su comisión en menos de 5 minutos | Los tres en T1, entre 0:43 y 1:52, sin pedir ayuda | Cumplido según las fichas de observación; el registro del MVP no se exportó, por lo que no se declara como resultado cruzado |
 | 2. Respuesta útil de un par de la comisión sin contacto previo | U3 respondió la consulta de U2 a los 10 minutos y U2 la marcó «Me sirvió». De las consultas de U1 y U3 no quedó registro del intercambio | Cumplido en el mínimo (1 consulta). La respuesta la pedía la consigna de T6 |
 | 3. Un usuario sube material propio sin que se lo pidan | Las fichas marcan aporte en U1 y U3, pero a U1 se le rechazó un Excel y la ficha de U3 no dice qué subió | Señal favorable, no confirmada |
 | 4. Identifica comisión y cuatrimestre sin abrir el material | Los tres en T5 | Cumplido |
@@ -157,7 +157,7 @@ El MVP incluye únicamente lo necesario para poner a prueba la hipótesis de val
 | Filtros por comisión y cuatrimestre | Filtrado funcional de los recursos según la cursada seleccionada.                                               | No se simula su funcionamiento.                                                                                                                    |
 | Tipos de material                   | Clasificación, etiquetas y navegación por tipo de recurso.                                                      | No se simula su funcionamiento.                                                                                                                    |
 | Consulta de recursos                | Listado con contexto visible, detalle y acceso al material.                                                     | El equipo prepara previamente los recursos iniciales.                                                                                              |
-| Carga de material                   | Formulario funcional con materia, comisión, cuatrimestre, tipo de material, etiquetas de una lista cerrada y campos de contexto o advertencias. | En la prueba del TP5 el equipo cargó el material inicial. En el piloto de la v4 no hay carga inicial: el material lo suben los estudiantes. |
+| Carga de material                   | Formulario funcional con materia, comisión, cuatrimestre, tipo de material de lista cerrada y campos de tema, docente, contexto o advertencias de texto libre. | En la prueba del TP5 el equipo cargó el material inicial. En el piloto de la v4 no hay carga inicial: el material lo suben los estudiantes. |
 | Canal de consultas                  | Publicación y respuesta de mensajes entre usuarios.                                                             | Los canales por comisión se crean manualmente. Las respuestas que validan la hipótesis deben provenir de otro estudiante de la comisión.           |
 
 El registro con correo institucional no se considera evidencia suficiente de regularidad ni de inscripción. La prueba evalúa la experiencia con cursadas simuladas, no la eficacia de la verificación institucional.
