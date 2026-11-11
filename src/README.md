@@ -14,7 +14,7 @@ Construye el alcance del brief v3 (`docs/brief.md`). Mantiene las decisiones de 
 
 Si no hay resultados, se dice claramente y nunca se muestra material de otra comisión como propio.
 
-Incluye las correcciones del TP4 que aceptó el equipo: ayuda y error junto al campo de correo, confirmación y resultado de descarga junto a la acción, detalle que se abre sólo al elegir un material, comisión única como dato fijo, cursada conservada al cambiar de pestaña, y tipo y tamaño del archivo en el detalle. El detalle está en `docs/tp5-informe.md`, punto 2.
+Incluye las correcciones del TP4 que aceptó el equipo: ayuda y error junto al campo de correo, confirmación y resultado de descarga junto a la acción, detalle que se abre sólo al elegir un material, comisión única como dato fijo, cursada conservada al cambiar de pestaña, y tipo y tamaño del archivo en el detalle. La trazabilidad de esas decisiones está en `../docs/prompts.md`.
 
 ### Flujos complementarios
 
