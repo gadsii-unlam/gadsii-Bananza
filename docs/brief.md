@@ -251,7 +251,7 @@ La satisfacción se consultará al finalizar las tareas y no reemplazará la obs
 
 ## Arquitectura: del MVP a la visión
 
-**Hoy (MVP).** Es una aplicación web de dos capas: un cliente HTML/JS sin framework y un único proceso Node.js. Ese proceso sirve la interfaz y una API JSON, y guarda todo en una base SQLite y en una carpeta de archivos del mismo disco. La regularidad, la inscripción, el material inicial y los canales los carga el equipo a mano (`seed/datos.json`). El diagrama y los componentes están en `docs/arquitectura/tp6-arquitectura.md`, punto 1.
+**Hoy (MVP).** Es una aplicación web de dos capas: un cliente HTML/JS sin framework y un único proceso Node.js. Ese proceso sirve la interfaz y una API JSON, y guarda todo en una base SQLite y en una carpeta de archivos del mismo disco. La regularidad se simula comprobando el sufijo del correo. Las cursadas se precargan por correo o las elige el estudiante. El equipo carga las comisiones y los materiales iniciales. Cada comisión funciona como canal de consultas. El diagrama y los componentes están en `docs/arquitectura/tp6-arquitectura.md`, punto 1.
 
 **Visión.** El producto completo agrega:
 * identidad verificada;
@@ -265,7 +265,7 @@ También mueve los datos a una base persistente con respaldo y los archivos a un
 
 **Salto principal.** Pasar de una identidad y unas cursadas simuladas a un acceso verificado contra la UNLaM. El valor del producto depende de que «tu comisión» sea un dato cierto, y esta pieza no depende sólo del equipo.
 
-**Primer paso.** El piloto de la v4 se puede hacer con la identidad todavía simulada, pero no con los aportes guardados en el disco de una sola máquina. Lo primero que cambia de la arquitectura es el almacenamiento de archivos.
+**Primer paso.** El piloto de la v4 puede conservar la identidad simulada. Al recibir aportes reales, la prioridad es poder recuperarlos si se pierde el disco.
 
 **Tecnologías que agregaría la visión:**
 * inicio de sesión federado contra el proveedor del correo institucional o, si no existe, verificación por enlace al correo;
@@ -276,13 +276,13 @@ Node.js se mantiene por familiaridad del equipo.
 
 ## Restricciones técnicas del contexto
 
-* **Integración institucional sin confirmar.** No hay evidencia de que la UNLaM permita aplicaciones externas ni de que exponga interfaces para verificar alumnos y materias (supuestos 7 y 8). Hasta tenerla, la identidad se apoya en el correo institucional y la comisión la declara el estudiante.
+* **Integración institucional sin confirmar.** No hay evidencia de que la UNLaM permita aplicaciones externas ni de que exponga interfaces para verificar alumnos y materias (supuestos 7 y 8). En el MVP se acepta el correo declarado y se usan cursadas precargadas o elegidas por el estudiante. Verificar la casilla por enlace sería una etapa intermedia y dejaría pendiente la comprobación académica.
 * **Mantenimiento.** Lo sostiene un equipo de estudiantes que rota. Por eso se prefieren servicios administrados con respaldo automático antes que infraestructura propia o la máquina de un integrante.
 * **Contexto de uso.** Se usa sobre todo desde una computadora, en casa y con conexión (TP2). Eso sostiene una aplicación web, sin uso sin conexión ni aplicación nativa.
 * **Archivos de los estudiantes.** El material lo aportan los usuarios y no se puede reconstruir. Antes de abrir el acceso fuera de la prueba, el almacenamiento necesita copia de respaldo y control de contenido.
 
 ## Riesgo técnico principal
 
-La subida y el almacenamiento de archivos. Es el componente del que depende el piloto: si subir falla o confunde, el contenido no crece. En la prueba del TP5 fue lo único que dio un error. El rechazo del `.sf2` de U1 era correcto, pero U1 salió convencido de que no podía subir un Excel. Además, lo único que subió U1 fue un archivo de prueba, y quedó publicado sin ningún control.
+La subida y el almacenamiento de archivos. Es el componente del que depende el piloto: si subir falla o confunde, el contenido no crece. El rechazo del `.sf2` de U1 era correcto, pero U1 salió convencido de que no podía subir un Excel. Además, lo único que subió U1 fue un archivo de prueba, y pasó la validación de campos y extensión y quedó publicado sin revisión de pertinencia.
 
 Hoy los archivos viajan en base64 dentro del pedido, se cargan enteros en la memoria del único proceso y se guardan sin copia en el disco del servidor. La justificación está en `docs/arquitectura/tp6-arquitectura.md`, punto 5.
