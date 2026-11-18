@@ -52,14 +52,12 @@ Azul indica componentes construidos, amarillo punteado identifica simulaciones o
 
 ## 2. Dos decisiones heredadas
 
-El registro del 25/10/2026 atribuye las dos elecciones de implementación a Claude Code (Claude Opus 5.5). El equipo ya había definido en el TP3 que simularía la regularidad. La valoración de la tercera columna conserva el criterio propuesto en el borrador y queda pendiente de confirmación por los integrantes.
+El registro del 25/10/2026 atribuye las dos elecciones de implementación a Claude Code (Claude Opus 5.5). El equipo ya había definido en el TP3 que simularía la regularidad. El equipo confirmó la atribución de ambas decisiones y en qué condiciones las sostendría.
 
-| Decisión del MVP | ¿Quién la tomó? | ¿La sostendrían hoy? (propuesta) | Evidencia del TP2 o TP5 |
+| Decisión del MVP | ¿Quién la tomó? | ¿La sostendrían hoy? | Evidencia del TP2 o TP5 |
 |---|---|---|---|
 | Guardar metadatos en SQLite y adjuntos en el mismo disco. | La herramienta. | Para la prueba, sí. Para el piloto, conservar los aportes con respaldo recuperable. | En T1, U1 encontró el parcial en 1:31, U2 en 0:43 y U3 en 1:52. Esa tarea midió recuperación de material. Ninguna sesión probó concurrencia ni recuperación ante pérdida del disco. |
 | Entregar una sesión por correo institucional declarado, sin contraseña. | La herramienta. | Para simular el ingreso, sí. Para la visión, verificar identidad e inscripción. | En el TP2, U1 valoró la verificación para reducir desinformación y U3 para evitar spam de personas externas. Comprobar sólo el texto del correo deja abierta esa necesidad. |
-
-Fuentes: [registro del TP5](../prompts.md), [entrevistas del TP2](../evidencia/tp2/) y [fichas de las sesiones](../evidencia/tp5/).
 
 ## 3. Arquitectura de la gran visión
 
@@ -121,4 +119,4 @@ El [brief v5](../brief.md) abre con los cambios respecto de la v4. Incorpora el 
 
 ## 7. Uso de IA y validación del equipo
 
-El [registro de IA](../prompts.md) identifica la asistencia en los diagramas, la redacción, las alternativas tecnológicas y la revisión documental. La herramienta también intervino en el borrador de los puntos 1 y 2. Quedan pendientes la lectura del código por parte del equipo y su confirmación de quién tomó las dos decisiones y cuáles sostendría hoy, como exige la consigna.
+El [registro de IA](../prompts.md) identifica la asistencia en los diagramas, la redacción, las alternativas tecnológicas y la revisión documental. La herramienta también intervino en el borrador de los puntos 1 y 2. El equipo confirmó las dos decisiones del punto 2. Queda pendiente que un integrante valide el diagrama del MVP contra el código.
