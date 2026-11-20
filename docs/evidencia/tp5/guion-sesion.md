@@ -1,5 +1,7 @@
 # TP5 · Punto 3 — Preparación de la sesión
 
+**Participantes.** U1, U2 y U3 son los mismos usuarios entrevistados en el TP2. La comisión 2300 se usó como contexto simulado para esta sesión.
+
 ## Tareas (situaciones, no instrucciones)
 
 
