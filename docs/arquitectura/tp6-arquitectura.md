@@ -110,13 +110,3 @@ El contorno azul marca lo que ya cubre el MVP. El gris identifica componentes pr
 El rechazo era el previsto, pero U1 terminó la sesión con una idea equivocada sobre qué podía compartir. Además, el archivo de prueba quedó publicado como parcial. El formulario comprueba los campos y la extensión, mientras que la pertinencia del contenido queda a cargo de quien lo sube. En un piloto que empieza sin material precargado, esas dos fricciones afectan tanto la cantidad de aportes como su utilidad.
 
 Al crecer el uso, cada subida ocupa memoria en el mismo proceso que atiende las consultas. El navegador limita el archivo a **10 MiB** y lo codifica en base64. El servidor limita a **15 MiB el cuerpo JSON completo**, después decodifica el adjunto y lo escribe en disco. El repositorio no incluye un procedimiento de respaldo de esos archivos. Son riesgos de concurrencia y pérdida de datos pendientes de medir. El TP5 documenta la confusión de U1, sin registrar una caída por carga.
-
-Evidencia: [grabación de U1, T4](../evidencia/tp5/U1-sesion/t4.mkv) y [respuesta de cierre 4](../evidencia/tp5/U1-sesion/observacion.md).
-
-## 6. Brief de producto, versión 5
-
-El [brief v5](../brief.md) abre con los cambios respecto de la v4. Incorpora el paso de cursadas simuladas a verificadas, las restricciones institucionales y de mantenimiento, y el riesgo de perder aportes en el piloto.
-
-## 7. Uso de IA y validación del equipo
-
-El [registro de IA](../prompts.md) identifica la asistencia en los diagramas, la redacción, las alternativas tecnológicas y la revisión documental. La herramienta también intervino en el borrador de los puntos 1 y 2. El equipo confirmó las dos decisiones del punto 2. Queda pendiente que un integrante valide el diagrama del MVP contra el código.
