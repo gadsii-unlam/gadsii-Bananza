@@ -80,7 +80,7 @@ Cada entrega tiene su tag. `tp4-entrega` es el único que el equipo aplicó dura
 | `tp3-entrega` | `eb277cc` | 14/09/2026 | Brief v3, alternativas y wireframe. `propuesta-final.md` se commiteó el 22/09 y entra en `tp4-entrega`. |
 | `tp4-entrega` | `401f2b7` | 22/09/2026 | Tag original del equipo. La evaluación con IA (`docs/evaluacion/`) se mergeó después, el 27/09 (`f751443`). |
 | `tp5-entrega` | `d8320da` | 11/11/2026 | MVP, métricas, guion, evidencia de las sesiones y brief v4. Se eligió este y no el merge del 09/11 (`ab9812b`) porque ahí `docs/metricas.md` estaba borrado (`db28bab`); se restauró el 11/11 (`46de60a`). |
-| `tp6-entrega` | `3a8e9ee` | 19/11/2026 | Merge del TP6 y brief v5. Ese merge borró `docs/arquitectura/`; se restauró en `tpi-entrega`. |
+| `tp6-entrega` | `53da1eb` | 19/11/2026 | Brief v5 y `docs/arquitectura/tp6-arquitectura.md`, en la rama `tp6` antes de mergear. Se eligió este y no el merge a `main` (`3a8e9ee`) porque ese merge borró `docs/arquitectura/`; se restauró en `tpi-entrega`. |
 | `tpi-entrega` | rama `tpi` | 21/11/2026 | README, arquitectura restaurada, brief v5 sin el párrafo duplicado, registro de IA y documento integrador. |
 
 No hay línea base del **TP7**: no encontramos en el repositorio commits ni archivos que correspondan a esa entrega.
